@@ -3,207 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform Engineer</title>
+    <title>Abhinash Shrestha</title>
     <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555555;
+            --accent: #0056b3;
+            --border: #e0e0e0;
+            --card-bg: #f5f5f5;
+            --tag-bg: #e8e8e8;
+            --tag-border: #d0d0d0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0d1117;
+                --text: #c9d1d9;
+                --text-secondary: #8b949e;
+                --accent: #58a6ff;
+                --border: #21262d;
+                --card-bg: #161b22;
+                --tag-bg: #161b22;
+                --tag-border: #30363d;
+            }
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            max-width: 800px;
+            font-family: -apple-system, 'Segoe UI', Helvetica,
+                         Arial, sans-serif;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.7;
+            padding: 48px 20px;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
-        h1 { color: #58a6ff; margin-bottom: 8px; font-size: 1.5em; }
-        h2 {
-            color: #58a6ff;
-            margin-top: 36px;
-            margin-bottom: 14px;
-            font-size: 1.1em;
-            border-bottom: 1px solid #21262d;
-            padding-bottom: 8px;
+
+        h1 {
+            font-size: 1.4em;
+            margin-bottom: 4px;
         }
-        .subtitle { color: #8b949e; margin-bottom: 24px; }
-        .contact { margin-bottom: 28px; }
-        .contact a { color: #58a6ff; text-decoration: none; }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            margin-bottom: 32px;
+            font-size: 0.9em;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
         .contact a:hover { text-decoration: underline; }
-        .section { margin-bottom: 20px; }
-        .about { 
-            margin-bottom: 28px; 
-            padding: 16px;
-            background: #161b22;
-            border-left: 3px solid #58a6ff;
-            border-radius: 4px;
+
+        h2 {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
         }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; color: #c9d1d9; }
-        li strong { color: #e6edf3; }
-        .highlight { color: #f0883e; }
-        .job-title { color: #e6edf3; font-weight: bold; }
-        .job-meta { color: #8b949e; font-size: 0.9em; }
+
+        .about {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 0.92em;
+        }
+
+        li strong {
+            font-weight: 600;
+        }
+
+        .job {
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .job-meta {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+
         .tag {
             display: inline-block;
-            background: #161b22;
-            border: 1px solid #30363d;
-            padding: 3px 10px;
-            margin: 3px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: #c9d1d9;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            padding: 2px 8px;
+            margin: 2px;
+            border-radius: 3px;
+            font-size: 0.8em;
         }
+
         .cta {
-            margin-top: 44px;
-            padding: 24px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
             text-align: center;
+            font-size: 0.95em;
         }
-        .cta p { margin-bottom: 8px; }
+
         .cta a {
-            color: #58a6ff;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1em;
         }
+
         .cta a:hover { text-decoration: underline; }
-        .stat-row {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin: 16px 0;
-        }
-        .stat {
-            background: #161b22;
-            border: 1px solid #30363d;
-            padding: 12px 16px;
-            border-radius: 6px;
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-        }
-        .stat .num { 
-            color: #f0883e; 
-            font-size: 1.3em; 
-            font-weight: 600; 
-        }
-        .stat .label { 
-            color: #8b949e; 
-            font-size: 0.8em; 
-            margin-top: 4px; 
-        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- EDIT: your name or keep as "Platform Engineer" -->
     <h1>Platform Engineer</h1>
-    <p class="subtitle">Kubernetes · Bare Metal & Cloud · 
-    HA/DR · Regulated Environments · Solo Delivery</p>
+
+    <p class="subtitle">Kubernetes · On-Prem & Cloud ·
+    HA/DR · Regulated Environments</p>
 
     <div class="contact">
-        <a href="https://linkedin.com/in/YOURPROFILE">
-        LinkedIn</a> · 
-        <a href="https://github.com/YOURUSERNAME">GitHub</a> · 
-        Nepal (GMT+5:45) · 
-        <span class="highlight">Available for contract work
-        </span>
+        <!-- EDIT: your linkedin url -->
+        <a href="https://www.linkedin.com/in/abhinashshrestha">LinkedIn</a> ·
+        <a href="https://github.com/AbhinashShrestha">GitHub</a> ·
+        Nepal (GMT+5:45)
     </div>
 
-    <div class="about">
-        I architect and operate production Kubernetes platforms 
-        on enterprise hardware and cloud for regulated industries. 
-        Sole platform engineer handling end-to-end — architecture, 
-        HLD/LLD, implementation, HA/DR design, observability, 
-        cross-vendor incident management, and production support 
-        across telco, banking, and SaaS workloads in 
-        ISO 27001:2022-aligned environments.
+    <h2>About</h2>
+    <p class="about">
+        Platform engineer working across telco, banking, and
+        SaaS workloads in ISO 27001:2022-aligned environments.
+        Experienced in end-to-end delivery — architecture,
+        HLD/LLD documentation, implementation, HA/DR design,
+        observability, cross-vendor incident coordination,
+        and production support on both enterprise hardware
+        and cloud.
+    </p>
+
+    <h2>Work</h2>
+
+    <div class="job">
+        <p class="job-title">Platform & DevOps Engineer</p>
+        <p class="job-meta">Smart Solutions Technology ·
+        Oct 2024 – Present</p>
     </div>
+    <ul>
+        <li><strong>Telco Platform</strong> — RKE2
+        Kubernetes on Oracle PCA X10, ArgoCD GitOps,
+        CI/CD (Jenkins, GitLab, SonarQube, Trivy, Nexus),
+        observability (Prometheus, ELK Fleet Management,
+        Alertmanager-to-SNMP). PostgreSQL HA (Patroni),
+        HAProxy failover (Keepalived), warm standby
+        multi-DC failover design.</li>
 
-    <div class="stat-row">
-        <div class="stat">
-            <div class="num">3 mo</div>
-            <div class="label">Telco platform 
-            delivered solo</div>
-        </div>
-        <div class="stat">
-            <div class="num">100+</div>
-            <div class="label">Microservice migration 
-            planned</div>
-        </div>
-        <div class="stat">
-            <div class="num">4</div>
-            <div class="label">Vendor escalations 
-            (Cisco, F5, Oracle, Google)</div>
-        </div>
-        <div class="stat">
-            <div class="num">3</div>
-            <div class="label">Industries 
-            (Telco, Banking, SaaS)</div>
-        </div>
+        <li><strong>Banking Client</strong> — Nexus
+        Repository, DR scripting, CIS hardening,
+        master-replica replication.</li>
+
+        <li><strong>Messaging Platform</strong> — Matrix
+        (Synapse) backend, LiveKit SFU/SIP, Twilio SIP
+        trunking, Element enterprise licensing engagement.
+        </li>
+
+        <li><strong>AWS SaaS</strong> — CloudFront, S3,
+        ECS, ALB, WAF, auto-scaling. Cost-optimized.</li>
+
+        <li><strong>Company Infra</strong> — Proxmox VE
+        on HPE ProLiant, GitLab, DMZ, WireGuard/IPsec,
+        MikroTik.</li>
+
+        <li><strong>Incident Management</strong> —
+        Cross-vendor coordination with Cisco, F5, Google,
+        Oracle/WDN for network, storage, and cost issues.
+        </li>
+
+        <li><strong>Research</strong> — Cloud hosting
+        architecture, edge WAF evaluation, GPUaaS,
+        NGFWaaS, OTT platform feasibility, Envoy Gateway
+        API, Victoria Metrics, LGTM stack.</li>
+    </ul>
+
+    <br>
+
+    <div class="job">
+        <p class="job-title">DevOps Intern</p>
+        <p class="job-meta">F1Soft International ·
+        May – Aug 2024</p>
     </div>
-
-    <h2>What I've Delivered</h2>
-    <div class="section">
-        <ul>
-            <li><strong>Telco Platform 
-            (Oracle PCA X10)</strong> — RKE2 Kubernetes, 
-            ArgoCD GitOps, full CI/CD with security 
-            scanning, Prometheus + ELK (Fleet Management) 
-            + Alertmanager-to-SNMP integration for 
-            legacy SOC. Warm standby and multi-DC 
-            failover design. Planning ~100 microservice 
-            migration via ApplicationSets.</li>
-
-            <li><strong>HA & DR</strong> — PostgreSQL HA 
-            (Patroni), HAProxy failover (Keepalived), 
-            multi-datacenter failover with RTO/RPO 
-            analysis, DR scripting and runbooks.</li>
-
-            <li><strong>Vendor Incident Management</strong> 
-            — Cross-vendor escalation with Cisco, F5, 
-            Oracle, Google. Structured evidence 
-            (logs, tcpdumps, alert timelines) driving 
-            vendor accountability for DMZ outages, 
-            storage corruption, cost anomalies.</li>
-
-            <li><strong>Cloud Platform Research</strong> 
-            — Architecture, security posture, edge WAF 
-            evaluation (Cloudflare, F5), VM placement 
-            strategy, and feasibility analysis for 
-            major telco client.</li>
-
-            <li><strong>Banking Infrastructure</strong> 
-            — Artifact management (Nexus), DR automation, 
-            CIS hardening, database replication for 
-            a foreign reserve bank.</li>
-
-            <li><strong>Messaging Platform</strong> — 
-            Matrix/Synapse backend with LiveKit SFU, 
-            SIP trunking (Twilio), WebRTC-PSTN bridging. 
-            Enterprise licensing engagement with 
-            Element. Backend delivery complete.</li>
-
-            <li><strong>AWS SaaS Architectures</strong> 
-            — CloudFront + S3 + ECS + ALB + WAF + 
-            ACM + ECR + auto-scaling. Cost-optimized, 
-            horizontally scalable.</li>
-
-            <li><strong>Company Infrastructure</strong> 
-            — Proxmox VE on HPE ProLiant, self-hosted 
-            GitLab, DMZ, WireGuard/IPsec, 
-            MikroTik routing.</li>
-
-            <li><strong>Strategic Research</strong> — 
-            OTT platform feasibility, GPUaaS, NGFWaaS 
-            (OPNsense + Zenarmor), hosting provider 
-            architecture, Envoy Gateway API, 
-            Victoria Metrics, LGTM stack.</li>
-        </ul>
-    </div>
+    <ul>
+        <li>Kubernetes (ArgoCD, Helm), HAProxy/Nginx,
+        ELK/Loki, CIS hardening, HashiCorp Vault.</li>
+    </ul>
 
     <h2>Skills</h2>
-    <div class="section">
+    <div>
+        <!-- EDIT: add or remove tags as needed -->
         <span class="tag">Kubernetes (RKE2)</span>
         <span class="tag">Docker/Podman</span>
         <span class="tag">Helm</span>
@@ -221,47 +239,35 @@
         <span class="tag">HAProxy</span>
         <span class="tag">Keepalived</span>
         <span class="tag">Nginx</span>
-        <span class="tag">Envoy</span>
         <span class="tag">Proxmox VE</span>
         <span class="tag">Oracle PCA X10</span>
-        <span class="tag">HPE ProLiant</span>
         <span class="tag">AWS</span>
         <span class="tag">Azure</span>
         <span class="tag">GCP</span>
         <span class="tag">WireGuard</span>
         <span class="tag">IPsec</span>
         <span class="tag">MikroTik</span>
-        <span class="tag">Cloudflare</span>
         <span class="tag">Bash</span>
         <span class="tag">Python</span>
         <span class="tag">Ansible</span>
-        <span class="tag">HashiCorp Vault</span>
+        <span class="tag">Vault</span>
         <span class="tag">CIS Benchmarks</span>
         <span class="tag">ISO 27001</span>
         <span class="tag">HLD/LLD</span>
         <span class="tag">DR Planning</span>
     </div>
 
-    <h2>Background</h2>
-    <div class="section">
-        <p class="job-title">Platform Architect & 
-        DevOps Engineer</p>
-        <p class="job-meta">Current · Oct 2024 – Present · 
-        Sole platform engineer</p>
-        <br>
-        <p class="job-title">DevOps Intern</p>
-        <p class="job-meta">F1Soft International · 
-        May – Aug 2024</p>
-        <br>
+    <h2>Education</h2>
+    <div class="job">
         <p class="job-title">BE Computer Engineering</p>
-        <p class="job-meta">Tribhuvan University (IOE) · 
+        <p class="job-meta">Tribhuvan University (IOE) ·
         2024</p>
     </div>
 
     <div class="cta">
-        <p>Interested in working together?</p>
-        <a href="https://linkedin.com/in/YOURPROFILE">
+        <a href="https://www.linkedin.com/in/abhinashshrestha">
         Message me on LinkedIn →</a>
     </div>
+
 </body>
 </html>
