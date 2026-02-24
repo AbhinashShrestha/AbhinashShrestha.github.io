@@ -143,7 +143,7 @@
     <h1>DevOps Engineer</h1>
 
     <p class="subtitle">Kubernetes · On-Prem & Cloud ·
-    HA/DR · Regulated Environments</p>
+    HA/DR · Platform Engineering · Regulated Environments</p>
 
     <div class="contact">
         <a href="https://www.linkedin.com/in/abhinashshrestha">LinkedIn</a> ·
@@ -153,13 +153,15 @@
 
     <h2>About</h2>
     <p class="about">
-        DevOps engineer working across telco, banking, and
-        SaaS workloads in ISO 27001:2022-aligned environments.
-        End-to-end delivery — architecture, documentation,
-        implementation, HA/DR design, observability,
-        cross-vendor incident coordination, and production
-        support on enterprise hardware and cloud.
-        Building primarily with open-source tooling.
+        DevOps engineer working across telco, banking, unified
+        communications, and SaaS workloads in ISO 27001:2022-aligned
+        environments. End-to-end delivery — architecture,
+        documentation, implementation, HA/DR design, resource
+        optimization, observability, cross-vendor incident
+        coordination, and production support on enterprise
+        hardware and cloud. Currently extending platforms toward
+        self-service internal developer platforms. Building
+        primarily with open-source tooling.
     </p>
 
     <h2>Work</h2>
@@ -170,41 +172,70 @@
         Oct 2024 – Present</p>
     </div>
     <ul>
-        <li><strong>Telco Platform</strong> — RKE2
-        Kubernetes on Oracle PCA X10 (OSS stack),
-        ArgoCD GitOps, CI/CD (Jenkins, GitLab, SonarQube,
-        Trivy, Nexus), observability (Prometheus, ELK Fleet
-        Management, Alertmanager-to-SNMP). PostgreSQL HA
-        (Patroni), HAProxy failover (Keepalived), warm
-        standby multi-DC failover design. Evaluated
-        OpenShift, Rancher, KubeSphere as platform
-        alternatives. Scaling for multi-project hosting.</li>
+        <li><strong>Telco Platform (Oracle PCA X10)</strong> —
+        RKE2 Kubernetes (OSS stack), ArgoCD GitOps, CI/CD
+        (Jenkins, GitLab, SonarQube, Trivy, Nexus),
+        observability (Prometheus, ELK Fleet Management,
+        Alertmanager-to-SNMP). PostgreSQL HA (Patroni),
+        HAProxy failover (Keepalived), warm standby multi-DC
+        failover design. Platform-wide resource right-sizing
+        from metrics analysis. Redis deployment with persistence
+        tuning and Grafana dashboards. Evaluated OpenShift,
+        Rancher, KubeSphere as platform alternatives. Scaling
+        for multi-project hosting.</li>
 
-        <li><strong>Banking Client</strong> — Nexus
-        Repository, DR scripting, CIS hardening,
-        master-replica replication (PostgreSQL).</li>
+        <li><strong>Digital Wallet Evaluation</strong> —
+        Assessed Kubernetes/OKE feasibility on PCA X10 for a
+        foreign banking software provider's payment platform;
+        mapped multi-environment needs, clarified resource
+        requirements, and advised leadership on engagement
+        scope.</li>
 
-        <li><strong>Messaging Platform</strong> — Matrix
-        (Synapse) backend, LiveKit SFU/SIP, Twilio SIP
-        trunking, Element enterprise licensing engagement.
-        </li>
+        <li><strong>Internal Developer Platform (IDP)</strong> —
+        Architecting self-service portal for namespace
+        provisioning, automated GitLab scaffolding, CI
+        pipeline generation, ArgoCD deployment, multi-tenant
+        RBAC, Vault zero-trust secrets, and centralized
+        service catalog (~1,000+ services). Includes ~100
+        microservice migration via ApplicationSets and
+        standardized Helm templates. Architecture document
+        under client review.</li>
 
-        <li><strong>AWS SaaS</strong> — CloudFront, S3,
-        ECS, ALB, WAF, auto-scaling. Cost-optimized.</li>
+        <li><strong>Unified Communications (AWS)</strong> —
+        Matrix (Synapse) backend, LiveKit SFU/SIP, Twilio SIP
+        trunking bridging WebRTC with PSTN. Interfacing with
+        Ncell for production SIP trunk integration. Element
+        enterprise licensing engagement and dev team
+        architecture guidance.</li>
 
-        <li><strong>Company Infra</strong> — Proxmox VE
-        on HPE ProLiant, GitLab, DMZ, WireGuard/IPsec,
+        <li><strong>Banking Client</strong> — Nexus Repository,
+        DR scripting, CIS hardening, master-replica
+        replication.</li>
+
+        <li><strong>European Fitness SaaS (AWS)</strong> —
+        CloudFront, S3, ECS, ALB, WAF, auto-scaling.
+        Cost-optimized for SaaS workloads. Azure CI/CD
+        pipeline design for separate e-commerce workload.</li>
+
+        <li><strong>Hosting Build-Out (PCA X10)</strong> —
+        Preparing production WiseCP, Plesk, AlmaLinux-to-CloudLinux
+        conversion, external PostgreSQL, and monitoring
+        integration. Previously evaluated GPUaaS, NGFWaaS
+        (OPNsense + Zenarmor), OTT hosting.</li>
+
+        <li><strong>Company Infra</strong> — Proxmox VE on HPE
+        ProLiant, GitLab, DMZ HAProxy, WireGuard/IPsec,
         MikroTik.</li>
 
-        <li><strong>Incident Management</strong> —
-        Cross-vendor coordination with Cisco, F5, Google,
-        Oracle/WDN for network, storage, and cost issues.
-        </li>
+        <li><strong>Incident Management</strong> — Cross-vendor
+        coordination with Cisco, F5, Google, Oracle/WDN.
+        Structured evidence gathering and escalation.</li>
 
-        <li><strong>Research</strong> — Cloud hosting
-        architecture, edge WAF evaluation, GPUaaS,
-        NGFWaaS, OTT platform feasibility, Envoy Gateway
-        API, Victoria Metrics, LGTM stack.</li>
+        <li><strong>Ongoing</strong> — Supporting legacy telco
+        platform (80+ microservices). Cloud hosting research,
+        edge WAF evaluation. Homelab: Envoy Gateway API,
+        Victoria Metrics, LGTM stack. Researching Vault
+        clustering, AWS/Azure patterns, MLOps/vLLM.</li>
     </ul>
 
     <br>
@@ -235,10 +266,10 @@
         <span class="tag">ELK Stack</span>
         <span class="tag">Alertmanager</span>
         <span class="tag">PostgreSQL (Patroni)</span>
+        <span class="tag">Redis</span>
         <span class="tag">HAProxy</span>
         <span class="tag">Keepalived</span>
         <span class="tag">Nginx</span>
-        <span class="tag">WSO2 API Manager</span>
         <span class="tag">Proxmox VE</span>
         <span class="tag">Oracle PCA X10</span>
         <span class="tag">AWS</span>
@@ -251,10 +282,17 @@
         <span class="tag">Python</span>
         <span class="tag">Ansible</span>
         <span class="tag">Vault</span>
+        <span class="tag">WebRTC</span>
+        <span class="tag">SIP Trunking</span>
+        <span class="tag">LiveKit</span>
+        <span class="tag">WiseCP</span>
+        <span class="tag">Plesk</span>
+        <span class="tag">CloudLinux</span>
         <span class="tag">CIS Benchmarks</span>
         <span class="tag">ISO 27001</span>
         <span class="tag">HLD/LLD</span>
         <span class="tag">DR Planning</span>
+        <span class="tag">IDP Architecture</span>
     </div>
 
     <h2>Education</h2>
