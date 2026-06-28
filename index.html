@@ -7,25 +7,13 @@
     <style>
         :root {
             --bg: #ffffff;
-            --text: #172033;
-            --text-secondary: #586174;
-            --accent: #0f5c8f;
-            --border: #dde5ee;
-            --card-bg: #f7f9fc;
-            --tag-bg: #edf3f8;
-            --tag-border: #d7e2ec;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0d1117;
-                --text: #d6dee8;
-                --text-secondary: #94a3b8;
-                --accent: #67b7f7;
-                --border: #243142;
-                --card-bg: #141b25;
-                --tag-bg: #172231;
-                --tag-border: #2b3a4d;
-            }
+            --text: #000000;
+            --text-secondary: #000000;
+            --accent: #000000;
+            --border: #000000;
+            --card-bg: #ffffff;
+            --tag-bg: #ffffff;
+            --tag-border: #000000;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -55,8 +43,7 @@
             color: var(--text-secondary);
             margin-top: 34px;
             margin-bottom: 13px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 7px;
+            padding-bottom: 0;
         }
         h3 {
             font-size: 1.02rem;
@@ -112,18 +99,18 @@
             text-decoration: none;
         }
         .linkedin-button:hover {
-            filter: brightness(0.94);
+        text-decoration: underline;
         }
         @media print {
             body { max-width: none; padding: 22px; }
-            .intro { border-color: #ddd; }
+            .intro { border-color: #000000; }
             .actions { display: none; }
         }
     </style>
 </head>
 <body>
-    <h1>DevOps / Platform Engineer</h1>
-    <p class="subtitle">Kubernetes, AWS, CI/CD, observability, PostgreSQL HA, SIP/WebRTC, telco platforms, and client-facing infrastructure architecture.</p>
+    <h1>Abhinash Shrestha</h1>
+    <p class="subtitle">DevOps / Platform Engineer - Kubernetes, AWS, CI/CD, observability, PostgreSQL HA, SIP/WebRTC, telco platforms, and client-facing infrastructure architecture.</p>
 <p>I build and operate cloud-native platforms for real production systems.</p>
 <p>I am a DevOps / Platform Engineer working across Kubernetes, CI/CD, observability, databases, networking, security hardening, AWS, Oracle PCA X10, SIP/WebRTC, and client-facing infrastructure architecture. My work has covered telco production platforms, nationwide SIM distribution systems, customer enrollment workflows, hosting platforms, digital wallet advisory, real-time messaging and calling platforms, banking/internal systems, and SaaS cloud architecture.</p>
 <p>My work focuses on turning ambiguous infrastructure requirements into platforms that are deployable, observable, recoverable, and supportable.</p>
@@ -140,20 +127,20 @@
 </ul>
 <h2>Featured Work</h2>
 <h3>DMS - Distribution Management System for Ncell</h3>
-<p>DMS is a nationwide SIM-selling and distribution platform for Ncell. I worked as Solution Architect and DevOps Engineer for the infrastructure platform, covering RKE2 Kubernetes, Oracle PCA X10, HAProxy/API gateway, PostgreSQL HA, CI/CD, observability, firewall flows, staging/production planning, redundancy testing, and resource right-sizing.</p>
+<p>DMS is a nationwide SIM-selling and distribution platform for Ncell. I worked across solution architecture and DevOps engineering for the infrastructure platform, covering RKE2 Kubernetes, Oracle PCA X10, HAProxy/API gateway, PostgreSQL HA, CI/CD, observability, firewall flows, staging/production planning, redundancy testing, and resource right-sizing.</p>
 <p>I created and maintained architecture diagrams, CI/CD flows, observability diagrams, master sheets, MOPs, network plans, production/staging resource plans, and redundancy documentation. The platform used GitLab, Jenkins, SonarQube, Trivy, Nexus, Argo CD, Prometheus, Grafana, Alertmanager, Elasticsearch, Kibana, Fleet Server, SNMP traps, PostgreSQL/Patroni, HAProxy, Keepalived, and Oracle PCA security rules.</p>
 <p>The project became an internal reference for how future Ncell workloads could run on the existing platform.</p>
 <h3>FAM CLUB - Messaging and Calling Platform</h3>
 <p>FAM CLUB is a family messaging and calling platform involving Matrix/Synapse, LiveKit, SIP, WebRTC, AWS, Oracle PCA X10, and Ncell SIP trunk integration.</p>
-<p>I worked across PoC and MVP phases as DevOps Engineer, SIP Integrator, and Cloud Infrastructure Consultant. I designed and tested architectures for Matrix/Synapse, MAS/OIDC, custom backend, LiveKit SFU, LiveKit SIP service, Redis, PostgreSQL/Aurora, Coturn, Sygnal push notifications, MongooseIM evaluation, and AWS deployment.</p>
+<p>I worked across PoC and MVP phases on DevOps, SIP integration, and cloud infrastructure. I designed and tested architectures for Matrix/Synapse, MAS/OIDC, custom backend, LiveKit SFU, LiveKit SIP service, Redis, PostgreSQL/Aurora, Coturn, Sygnal push notifications, MongooseIM evaluation, and AWS deployment.</p>
 <p>The most technically intense part was SIP and LiveKit integration. I worked through trunk behavior, SIP signaling, RTP/UDP media paths, dispatch rules, firewall ACLs, number formatting, inbound/outbound calling, and WebRTC-to-PSTN flows. The PoC successfully validated calling across Ncell/NTC and other scenarios.</p>
 <p>I also built a Terraform-based AWS MVP architecture using ECS, ECR, ALB/NLB, Route 53, ACM, CloudWatch, Aurora PostgreSQL, ElastiCache/Valkey, S3, SES/SNS, Client VPN, IAM, Secrets Manager, SSM, VPC endpoints, and GitLab CI.</p>
 <h3>SRA - SIM Registration and Agent Enrollment</h3>
 <p>SRA supports Ncell agent/customer enrollment, KYC, SIM/customer registration, and pack-purchase workflows. My work focused on production DevOps support, Kubernetes troubleshooting, HAProxy/network issues, PostgreSQL setup and hardening, observability, deployment support, and vendor/client coordination.</p>
 <p>I handled incidents involving Google API connectivity, sudden traffic bursts, pod CrashLoop issues, firewall/NAT behavior, DNS, HAProxy, Kubernetes workers, packet captures, tcpdump/Wireshark analysis, and application logs. One notable recovery was reclaiming an abandoned 3TB persistent volume and reprovisioning it for Kafka.</p>
 <h3>NCELL Cloud Suite - Hosting Platform</h3>
-<p>NCELL Cloud Suite is a hosting-provider platform based on WiseCP, Plesk, CloudLinux, Nginx, DNS, SMTP, WAF interfacing, checkout/payment flows, billing modules, and customer provisioning.</p>
-<p>My role combines DevOps, project management, and product-facing platform implementation. I translate client requirements into sprint plans, project trackers, risks, dependencies, execution plans, and change-management notes. I also work directly on the platform: WiseCP frontend/theme changes, Plesk/CloudLinux setup, service plans, DNS/TLS, SMTP, WAF-facing request flows, checkout/payment flows for Fonepay and debit/credit card payments, ongoing billing modules, KYC requirements, billing handoff formats, WAF sizing/interfacing, and customer journey validation.</p>
+<p>NCELL Cloud Suite is a hosting-provider platform based on WiseCP, Plesk, CloudLinux, Nginx, DNS, SMTP, WAF integration points, checkout/payment flows, billing modules, and customer provisioning.</p>
+<p>My role spans DevOps delivery, project coordination, and hands-on hosting-platform implementation. I translate client requirements into sprint plans, project trackers, risks, dependencies, execution plans, and change-management notes. I also work directly on the platform: WiseCP frontend/theme changes, Plesk/CloudLinux setup, service plans, DNS/TLS, SMTP, WAF routing/security integration points, checkout/payment flows for Fonepay and debit/credit card payments, ongoing billing modules, KYC requirements, billing handoff formats, WAF sizing and integration planning, and customer journey validation.</p>
 <p>Sprint 1 ended well and ahead of schedule.</p>
 <h3>DTE Replacement - Platform Modernization Proposal</h3>
 <p>For Ncell&#x27;s DTE replacement initiative, I researched and proposed a new platform design based on OpenShift, RKE2, KubeSphere, Rancher, and CNCF ecosystem tools.</p>
@@ -166,8 +153,8 @@
 <p>For a proposed digital wallet/banking platform, I reviewed vendor deployment architecture and hardware requirement documents for SIT, UAT, production, and DR environments. I mapped those requirements against Ncell domain knowledge and private cloud/platform constraints, then advised leadership on feasibility, timeline, operational responsibility, environment separation, and questions to clarify with the vendor.</p>
 <h3>Core Collective - Gym SaaS AWS Architecture</h3>
 <p>For a European gym SaaS startup, I designed a lean AWS architecture using CloudFront, S3, WAF, ALB, ECS autoscaling, PostgreSQL primary/replica, Redis, SNS/Firebase notification flow, ACM, and VPC networking. The goal was to stay cloud-native without overspending at startup scale.</p>
-<h3>RBM - Reserve Bank of Malawi</h3>
-<p>For an internal Reserve Bank of Malawi system, I set up Docker, Nginx, Apache HTTPD, SonarQube, Nexus Registry, and Apache Superset. I also created a Bash failover/DR script that periodically synchronized new data to a backup server and changed DNS during failover.</p>
+<h3>RBM - Foreign Reserve Bank</h3>
+<p>For an internal foreign reserve-bank system, I set up Docker, Nginx, Apache HTTPD, SonarQube, Nexus Registry, and Apache Superset. I also created a Bash failover/DR script that periodically synchronized new data to a backup server and changed DNS during failover.</p>
 <h3>Other Selected Work</h3>
 <ul>
 <li><strong>PMS - Ncell:</strong> Set up PostgreSQL master/replica, applied CIS hardening, and deployed Docker-based components for a performance management system.</li>
@@ -182,13 +169,13 @@
 <li>Validated Azure Container Apps/AKS patterns with Key Vault/managed identity, External Secrets, Azure Front Door, WAF policy, and Gateway API/Envoy routing.</li>
 <li>Researched Envoy Gateway API, VictoriaMetrics, LGTM stack, Vault clustering with Raft, Argo CD ApplicationSets, AWS/Azure architecture patterns, GPUaaS, NGFWaaS using OPNsense and Zenarmor, and MLOps/vLLM concepts.</li>
 <li>Studied GPU infrastructure concepts including NVIDIA MIG, vGPU profiles, AI Enterprise licensing, H100/A100 tradeoffs, CUDA isolation, RoCEv2, and GPUaaS operating models.</li>
-<li>Evaluated hosting-platform components including WiseCP, WHMCS, Virtuozzo, CloudLinux, Plesk mail, Microsoft Exchange Online Protection, Zimbra, DNS glue records, WAF interfacing, SMTP relay, checkout/payment flows, and billing/control-panel integration.</li>
+<li>Evaluated hosting-platform components including WiseCP, WHMCS, Virtuozzo, CloudLinux, Plesk mail, Microsoft Exchange Online Protection, Zimbra, DNS glue records, WAF integration, SMTP relay, checkout/payment flows, and billing/control-panel integration.</li>
 <li>Evaluated platform observability choices across Prometheus, Grafana, Alertmanager, ELK, Loki, Tempo, VictoriaMetrics, OpenTelemetry, CloudWatch, Elastic Agents/Fleet, and SNMP/FMS integration.</li>
 </ul>
 <h2>Core Technologies</h2>
 <ul>
 <li><strong>Cloud native:</strong> Kubernetes, RKE2, K3s, Docker, Podman, Helm, Argo CD, Rancher, Gateway API, Envoy Gateway.</li>
-<li><strong>Cloud and hybrid:</strong> Oracle PCA X10, AWS ECS/ECR/Aurora/ElastiCache/ALB/NLB/Route 53/CloudFront/S3/WAF/ACM/CloudWatch/SES/SNS/Client VPN, Azure container platform design, Proxmox VE.</li>
+<li><strong>Cloud and hybrid:</strong> Oracle PCA X10, AWS ECS/ECR/Aurora/ElastiCache/ALB/NLB/Route 53/CloudFront/S3/WAF/ACM/CloudWatch/SES/SNS/Client VPN, Azure container platform design, Proxmox VE, GCP exposure.</li>
 <li><strong>CI/CD and DevSecOps:</strong> GitLab CI, Jenkins, SonarQube, Trivy, Nexus Repository, Harbor evaluation, OWASP Dependency-Check, GitOps.</li>
 <li><strong>Data and HA:</strong> PostgreSQL, Patroni, etcd, HAProxy/Keepalived, Redis, Redis Sentinel, Valkey, MySQL/MariaDB, MongoDB, backup/restore, failover/failback.</li>
 <li><strong>Networking and security:</strong> HAProxy, Nginx, Apache, DNS, TLS, mTLS, OpenSSL, WireGuard, IPsec, MikroTik, firewall/NAT, WAF, Vault, CIS hardening, ISO-aligned environments.</li>
