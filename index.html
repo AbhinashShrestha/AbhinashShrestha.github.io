@@ -1,200 +1,445 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhinash Shrestha</title>
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --text-secondary: #000000;
-            --accent: #000000;
-            --border: #000000;
-            --card-bg: #ffffff;
-            --tag-bg: #ffffff;
-            --tag-border: #000000;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            max-width: 820px;
-            margin: 0 auto;
-            padding: 48px 22px 64px;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.62;
-        }
-        h1 {
-            font-size: 2.15rem;
-            line-height: 1.12;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 28px;
-        }
-        h2 {
-            font-size: 0.92rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-secondary);
-            margin-top: 34px;
-            margin-bottom: 13px;
-            padding-bottom: 0;
-        }
-        h3 {
-            font-size: 1.02rem;
-            margin-top: 22px;
-            margin-bottom: 7px;
-            color: var(--text);
-        }
-        p {
-            margin-bottom: 11px;
-            font-size: 0.96rem;
-        }
-        ul {
-            padding-left: 20px;
-            margin: 8px 0 14px;
-        }
-        li {
-            margin-bottom: 7px;
-            font-size: 0.94rem;
-        }
-        strong { font-weight: 700; }
-        .intro {
-            padding: 18px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: 28px;
-        }
-        .meta {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 8px;
-        }
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 38px 0 0;
-        }
-        .linkedin-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 64px;
-            padding: 0 18px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            background: var(--card-bg);
-            color: var(--accent);
-            font-size: 0.96rem;
-            font-weight: 700;
-            line-height: 1;
-            text-decoration: none;
-        }
-        .linkedin-button:hover {
-        text-decoration: underline;
-        }
-        @media print {
-            body { max-width: none; padding: 22px; }
-            .intro { border-color: #000000; }
-            .actions { display: none; }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abhinash Shrestha</title>
+<style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #5d5d5d;
+      --soft: #f6f6f6;
+      --border: #d7d7d7;
+      --dark: #1c1c1c;
+      --max: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 34px));
+      margin: 0 auto;
+      padding: 48px 0 70px;
+    }
+
+    header {
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--dark);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 3.35rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    section { margin-top: 34px; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.35;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .profile {
+      max-width: 860px;
+      font-size: 0.96rem;
+    }
+
+    .profile p + p { margin-top: 11px; }
+
+    .role {
+      margin-top: 20px;
+    }
+
+    .role + .role {
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--dark);
+    }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .title {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .role-meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .role-summary {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 860px;
+    }
+
+    .project {
+      margin-top: 22px;
+      padding: 18px 20px 17px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--dark);
+      border-radius: 4px;
+    }
+
+    .project-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .project-note {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+    }
+
+    .context {
+      color: var(--muted);
+      font-size: 0.91rem;
+      margin-bottom: 9px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 21px;
+    }
+
+    li {
+      margin: 6px 0;
+      padding-left: 2px;
+      font-size: 0.93rem;
+    }
+
+    .stack {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .stack strong { color: var(--text); }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 24px;
+    }
+
+    .skill {
+      padding-top: 9px;
+      border-top: 1px solid var(--dark);
+    }
+
+    .skill strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.91rem;
+    }
+
+    .skill p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.89rem;
+    }
+
+
+    .linkedin-button {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      padding: 14px 18px;
+      border: 1px solid var(--dark);
+      border-radius: 6px;
+      color: var(--text);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .linkedin-button:hover {
+      background: var(--dark);
+      color: #ffffff;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(var(--max), calc(100% - 24px));
+        padding-top: 30px;
+      }
+
+      .role-head,
+      .project-head {
+        display: block;
+      }
+
+      .role-meta {
+        text-align: left;
+        white-space: normal;
+        margin-top: 4px;
+      }
+
+      .project-note {
+        display: block;
+        margin-top: 4px;
+        white-space: normal;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        padding: 16px 15px;
+      }
+    }
+
+    @media print {
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+
+      .project {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Abhinash Shrestha</h1>
-    <p class="subtitle">DevOps / Platform Engineer - Kubernetes, AWS, CI/CD, observability, PostgreSQL HA, SIP/WebRTC, telco platforms, and client-facing infrastructure architecture.</p>
+<main class="page">
+<header>
+<h1>Abhinash Shrestha</h1>
+<p class="subtitle">DevOps Engineer — Production platform engineering, high-availability systems, cloud and private-cloud infrastructure, automation, incident recovery, and client-facing architecture.</p>
+</header>
+<section>
 <h2>Profile</h2>
-<p>DevOps / Platform Engineer working across Kubernetes, CI/CD, observability, databases, networking, security hardening, AWS, Oracle PCA X10, GCP architecture, SIP/WebRTC, payment flows, and client-facing infrastructure delivery. My work has covered telco production platforms, nationwide SIM distribution systems, customer enrollment workflows, hosting platforms, digital wallet advisory, real-time messaging and calling platforms, banking/internal systems, and SaaS cloud architecture.</p>
-<p>I am strongest where infrastructure requirements are unclear at the start: multiple vendors, old systems, strict budgets, production pressure, security constraints, and the need to make architecture, implementation, troubleshooting, documentation, and stakeholder communication fit together.</p>
+<div class="profile">
+<p>DevOps Engineer with hands-on production ownership across platform engineering, high-availability systems, cloud and private-cloud infrastructure, automation, networking/security, observability, disaster recovery, and client-facing technical delivery. I design, build, automate, operate, troubleshoot, recover, and improve systems spanning RKE2/Kubernetes, PostgreSQL/Patroni HA, Kafka/KRaft, CI/CD/GitOps, Oracle PCA X10, AWS, storage platforms, SIP/WebRTC, hosting, payments, and enterprise integrations.</p>
+<p>I work directly with clients, vendors, and engineering stakeholders to understand business objectives, workload characteristics, integration dependencies, security and availability requirements, operational constraints, and budget, then translate them into fit-for-purpose architecture, sizing, implementation plans, automation, monitoring, testing, documentation, and operational handover. My approach balances reliability, security, operability, growth, and cost so the platform matches the workload and the organization that has to run it.</p>
+</div>
+</section>
+<section>
 <h2>Work Experience</h2>
-<h3>Smart Solutions Technology Pvt. Ltd. - DevOps Engineer / Platform Engineer</h3>
-<p><strong>Kamaladi, Kathmandu, Nepal | October 2024 - Present</strong></p>
-<p>Worked across telco, hosting, banking/internal, SaaS, real-time communication, and internal infrastructure projects. Responsibilities include Kubernetes/RKE2 platform delivery, CI/CD, observability, PostgreSQL HA, production support, AWS architecture, GCP architecture/cost comparison, Oracle PCA X10 private cloud, SIP/WebRTC integration, DR planning, security hardening, payment flows, WAF integration, documentation, and client-facing architecture delivery.</p>
-<p><strong>DMS - Distribution Management System</strong></p>
+<article class="role">
+<div class="role-head">
+<div>
+<h3>Smart Solutions Technology Pvt. Ltd.</h3>
+<div class="title">DevOps Engineer — platform, infrastructure, production support and architecture responsibilities</div>
+</div>
+<div class="role-meta">Kamaladi, Kathmandu, Nepal<br/>October 2024 — Present</div>
+</div>
+<p class="role-summary">Work across telco, hosting, banking/internal systems, SaaS, payments, real-time communication, storage, and internal infrastructure. Responsibilities include production platform delivery, infrastructure architecture, CI/CD, observability, PostgreSQL HA, network/security integration, cloud/private-cloud design, DR, automation, project coordination, technical documentation, and direct client discussions/presentations.</p>
+<div class="project">
+<div class="project-head">
+<h4>DMS — Distribution Management System</h4>
+<span class="project-note">Nationwide telco production platform</span>
+</div>
+<p class="context">A nationwide SIM-selling and distribution platform running on Oracle PCA X10 with RKE2, PostgreSQL/Patroni HA, DMZ/frontend components, CI/CD/GitOps, observability, messaging, enterprise integrations, and client-owned firewall/WAF/network controls.</p>
+<ul><li>Designed, delivered, and operated the production platform on Oracle PCA X10, including an 11-node RKE2 topology (3 dedicated etcd, 3 control-plane, 5 workers), HAProxy/API-gateway paths, PostgreSQL/Patroni HA, CI/CD/GitOps, observability, firewall flows, and production support for 10+ microservices.</li><li>Built and maintained the delivery and operations stack across GitLab, Jenkins, SonarQube, Trivy, Nexus, Helm, Argo CD, Prometheus, Grafana, Alertmanager, Elasticsearch/Kibana/Fleet, PromQL rules, SNMP traps with OID/MIB mapping and FMS/SOC integration, Keycloak, PostgreSQL/Patroni, etcd, HAProxy, and Keepalived.</li><li>Authored and maintained HLD/LLD material, architecture and observability diagrams, IP/VIP and network plans, capacity sheets, firewall requirements, MOPs, runbooks, redundancy tests, RCAs, security reviews, and audit/client evidence.</li><li>Delivered the initial working PCA X10 platform in roughly three months using an OSS-heavy toolchain, then continued to operate, troubleshoot, optimize, and evolve it after production go-live.</li><li>Right-sized the platform using production utilization, Kubernetes requests/limits, VM metrics, and Grafana/Kibana data, reducing allocated infrastructure resources by roughly 30% while preserving stability and HA headroom.</li><li>Planned and executed rolling RKE2 certificate renewal across all 11 production nodes with zero service outage, including pre-change health checks, verified etcd snapshot, node-by-node restart, post-change node/pod/API/certificate validation, rollback planning, and client/audit documentation.</li><li>Performed RCA after a datacenter fault stopped one Patroni/PostgreSQL member and related etcd components; the HA design kept database service available through the remaining leader and synchronous standby with zero database outage.</li><li>Diagnosed timeline divergence after the failed infrastructure returned, performed the required manual recovery/rejoin, restored streaming replication, and verified all three PostgreSQL nodes, 0 MB lag, common timeline state, and healthy etcd membership.</li><li>Automated HA operations with Bash and OCI CLI, including VIP reassignment to the active Patroni leader and VIP/failover handling around HAProxy service paths.</li><li>Deployed and hardened Redis with RDB/AOF persistence, metrics, Grafana dashboards, operational checks, and Sentinel/live-replication options for improving availability.</li><li>Designed a multi-datacenter warm-standby DR plan covering standby Kubernetes, Patroni promotion, GitLab, Nexus, Keycloak, HAProxy, frontend services, backups, fencing/STONITH, approval gates, automated failover/failback, smoke tests, observability, and DR drills; documented the factors governing achievable RTO/RPO for client agreement.</li><li>Performed a credential-management/security review and proposed Vault/External Secrets, automated rotation, audit logging, anomaly detection, tracing, and log-based alerting; regularly present and advise client infrastructure/security teams on HA, observability, DR, capacity, secrets, platform changes, and operational risk.</li></ul>
+<p class="stack"><strong>Environment:</strong> Oracle PCA X10, RKE2, Kubernetes, GitLab, Jenkins, SonarQube, Trivy, Nexus, Helm, Argo CD, PostgreSQL, Patroni, etcd, HAProxy, Keepalived, Keycloak, Prometheus, Grafana, Alertmanager, Elasticsearch/Kibana/Fleet, SNMP, Bash, OCI CLI.</p>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>SRA — SIM Registration and Agent Enrollment</h4>
+<span class="project-note">Production telco integration and messaging</span>
+</div>
+<ul><li>Operate and troubleshoot production infrastructure supporting agent/customer enrollment, KYC, SIM/customer registration, and pack-purchase workflows across Kubernetes, HAProxy, PostgreSQL, DNS, firewall/NAT, worker networking, external APIs, pod failures, and traffic bursts.</li><li>Diagnosed OCR/Google API connectivity failures across Kubernetes worker networking, HAProxy, Cisco/Oracle firewall paths, DNS, TCP resets/retransmissions, and application logs using metrics, Elasticsearch/Kibana, tcpdump, Wireshark, and packet-level analysis; coordinated troubleshooting with client, vendor, cloud/API, and internal teams.</li><li>Configured and troubleshot regulated mTLS API integrations using certificate conversion, Kubernetes TLS/CA secrets, OpenSSL, curl, and server-side certificate-validation debugging for national-ID/eSIM-style workflows.</li><li>Recovered and repurposed an abandoned 3 TB persistent volume for the messaging workload, preserving existing storage capacity.</li><li>Built the SRA-to-DMS messaging platform as a 6-node Kafka KRaft cluster with Ansible using 3 dedicated controllers and 3 dedicated brokers.</li><li>Configured controller quorum, broker-only client access, SCRAM-SHA-512 authentication, scoped users/ACLs, disabled unwanted topic auto-creation, and configured the transaction topic with RF3/min-ISR2.</li><li>Integrated monitoring/exporters and validated controller quorum, authenticated brokers, ISR/replica health, SRA producer-to-DMS consumer flow, ACL behavior, idempotent Ansible reruns, and broker/controller redundancy and recovery.</li></ul>
+<p class="stack"><strong>Environment:</strong> Kubernetes/RKE2, HAProxy, PostgreSQL, Apache Kafka/KRaft, Ansible, SCRAM/ACLs, Prometheus/Grafana exporters, Elasticsearch/Kibana, Linux networking, tcpdump, Wireshark.</p>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>FAM CLUB — Messaging and Calling Platform</h4>
+<span class="project-note">AWS / SIP / WebRTC</span>
+</div>
+<ul><li>Delivered PoC and MVP DevOps, SIP-integration, and cloud-infrastructure work for a family messaging/calling platform involving Matrix/Synapse, LiveKit, SIP, WebRTC, AWS, Oracle PCA X10, and telco SIP trunk integration.</li><li>Designed and tested architecture for Matrix/Synapse, MAS/OIDC, custom backend services, LiveKit SFU/SIP, Redis, PostgreSQL/Aurora, Coturn, Sygnal push notifications, MongooseIM evaluation, and cloud/on-prem deployment options.</li><li>Diagnosed SIP signaling, RTP/UDP media paths, dispatch rules, firewall ACLs, E.164/number formatting, codec behavior, routing, and distributed-mode issues; validated local-carrier, cross-telco, international, and landline calling flows.</li><li>Built Terraform-based AWS MVP infrastructure using ECS, ECR, ALB/NLB, Route 53, ACM, CloudWatch, Aurora PostgreSQL, ElastiCache/Valkey, S3, SES/SNS, Client VPN, IAM, Secrets Manager, SSM, VPC endpoints, and GitLab CI.</li><li>Implemented GitLab CI for image builds, migrations, task-definition registration, ECS rollout, and log verification, while evaluating messaging/backend options against the MVP's cost and operating model.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>Cloud Suite / Ncell Cloud — Hosting, Billing, Payments, SMS and SAP Integration</h4>
+<span class="project-note">Hosting platform / integration / delivery coordination</span>
+</div>
+<ul><li>Delivered infrastructure and integration work across a hosting and billing platform built on WiseCP, Plesk, CloudLinux, Nginx, DNS, SMTP, WAF integration, customer provisioning, KYC, checkout/payment flows, billing modules, SAP/SFTP file exchange, and enterprise dependencies.</li><li>Worked directly with Ncell stakeholders to clarify business, integration, delivery, and operational requirements, then converted them into sprint/day-wise execution plans, project trackers, risks/dependencies, implementation assumptions, change notes, and delivery follow-up; coordinated infrastructure, application, billing, payment, SMS, bank/payment-partner, and internal teams. Sprint 1 completed ahead of schedule.</li><li>Implemented and validated WiseCP frontend/theme changes, Plesk/CloudLinux setup, service plans, DNS/TLS, SMTP, WAF routing/security integration points, customer journeys, billing handoff formats, SAP file-transfer requirements, and infrastructure/WAF sizing.</li><li>Developed and tested two payment gateway integrations, including Fonepay dynamic QR and debit/credit-card payment flows, and built SMS modules; coordinated integration testing, issue resolution, and validation with Ncell, banks/payment partners, application/infrastructure teams, and internal delivery teams.</li><li>Implemented and validated SFTP-based SAP/billing file handoffs with controlled inbound/outbound paths, private runtime storage, retention/processing expectations, and separation from the public web layer; created an OS-level network tunnel where the project topology required a host-level path and coordinated the associated routing/access.</li><li>Designed the platform's cold-standby DR for Plesk, WiseCP, and PostgreSQL using daily backups, restore-on-demand, proposed 24-hour RTO/RPO, shared backup reachability, DNS/IP/WAF cutover, fencing considerations, and restore-validation gates; separated SMART application/OS recovery responsibility from Ncell-owned infrastructure, DNS, routing, IP, and WAF cutover.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>DTE Replacement — Legacy Container Platform Modernization</h4>
+<span class="project-note">Legacy platform assessment</span>
+</div>
+<ul><li>Researched and proposed replacement architecture for a legacy Ncell container-platform environment, with migration/coexistence and enterprise network/security constraints treated as part of the design.</li><li>Compared OpenShift, RKE2, KubeSphere, Rancher, and related CNCF options against the existing environment, operational capability, licensing, migration effort, support model, security, and long-term operating responsibility.</li><li>Designed the surrounding platform toolchain across GitLab CI, Vault, OWASP Dependency-Check, SonarQube, Trivy, Harbor/Nexus, Argo CD, Kubernetes/RKE2, Rancher, Istio/Cilium, Prometheus, Grafana, Alertmanager, ELK/Loki, Logstash/Promtail, and Kibana.</li><li>Presented the trade-offs as a complete platform-modernization decision covering orchestration, migration complexity, maintainability, security boundaries, and realistic ownership after implementation.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>Internal Developer Platform — On-Prem Platform Proposal</h4>
+<span class="project-note">100+ services / self-service / GitOps</span>
+</div>
+<ul><li>Authored an on-prem Internal Developer Platform proposal for 100+ services covering self-service namespace provisioning, GitLab project/scaffolding workflows, CI generation, Helm/manifest templating, Argo CD deployment, RBAC, Vault-backed secrets, approval workflows, observability links, and a centralized service catalog.</li><li>Designed the operating model around repeatable service onboarding, governance, security boundaries, deployment consistency, developer self-service, and platform visibility while keeping Kubernetes ownership explicit for the operating teams.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>WFMS — Workforce Management System Architecture</h4>
+<span class="project-note">Private cloud / GCP comparison</span>
+</div>
+<ul><li>Created infrastructure architecture showing how a workforce-management workload could reuse the existing private-cloud platform, alongside an alternative GCP architecture and cost model.</li><li>Designed around web/mobile entry, WAF/load balancing, DMZ frontend services, HAProxy/API gateway, RKE2 backend services, CI/CD, observability, PostgreSQL HA, Vault, Redis Sentinel, Kafka, storage, SMTP/SMS, and existing enterprise integrations.</li><li>Presented infrastructure sizing, cloud translation, operational risk, availability trade-offs, and cloud-native upgrade options, mapping workload requirements into suitable GCP building blocks and service-level cost models.</li><li>Compared extension of the existing platform with a separate platform across reuse, isolation, operational maturity, failure domains, and total operating cost.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>Digital Wallet Platform — Bank API &amp; Internal-System Connectivity</h4>
+<span class="project-note">Staging / FortiWeb / regulated integration</span>
+</div>
+<ul><li>Reviewed staging and target SIT/UAT/production/DR architecture and hardware requirements, mapping DNS, VPN/VPC, public IP, load-balancing, database, sizing, environment separation, and security/network dependencies against the existing Ncell environment.</li><li>Implemented multiple FortiWeb appliance tunnels/connectivity paths for partner-bank API access and separate Ncell internal-system connectivity.</li><li>Mapped and coordinated source/destination paths, routing, firewall rules, and approved service ports with client infrastructure/security teams, then supported connectivity validation and issue isolation across the application, WAF, firewall, and network layers.</li><li>Explained the resulting connectivity/architecture model to client stakeholders and advised on feasibility, sequencing, environment separation, operational responsibility, security implications, and vendor dependencies.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>STaaS — Ceph Storage-as-a-Service Architecture</h4>
+<span class="project-note">Large-scale storage design and client presentation</span>
+</div>
+<ul><li>Designed and presented an initial 30 PB raw Ceph architecture for S3, CephFS, and NFS using enterprise SAS SSD/NVMe, EC 4+2 for the main capacity tier, 3× replicated NVMe for metadata/index/log and latency-sensitive small data, and a 20% operational reserve.</li><li>Calculated the protection and sellable-capacity impact of 3× replication, EC 4+2, and EC 8+4, with the 30 PB baseline yielding approximately 8 PB sellable under 3× replication or 16 PB under EC 4+2 after reserve.</li><li>Converted the raw-capacity target into physical topology options of roughly 82 storage nodes with 24×15.36 TB SAS SSD or 41 nodes with 24×30.72 TB NVMe, accounting for rack density, power/cooling, switch ports, and CRUSH/failure-domain requirements.</li><li>Separated OSD/data, metadata/index, MON, MGR, MDS, RGW, and NFS-Ganesha roles and created role-specific CPU, RAM, disk, and network baselines.</li><li>Designed distinct public S3, VPN-only NFS, integration, and administration paths, including an active HAProxy edge with ECMP/BGP-anycast concepts, a 100/200 GbE-class client/service fabric, isolated cluster/replication networking, and separate administration/OOB access.</li><li>Presented the capacity arithmetic, EC/replication trade-offs, rack/failure-domain behavior, service roles, network fabrics, scaling path, and the distinction between local HA and site-level DR directly to the client.</li><li>When the original scale exceeded the available budget, redesigned the same project for at least 300 TB sellable using 10 data servers across 3 racks with rack-aware EC 4+2 and separate metadata/control/RGW roles.</li><li>Calculated 614.40 TB raw initial capacity to 409.60 TB after EC 4+2 and approximately 327.68 TB sellable after the 20% reserve, with a disk-expansion path to roughly 409.60 TB sellable while retaining rack failure domains, role separation, access-plane separation, service/recovery fabrics, and operational reserve.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>SourcePilot — Procurement / Supplier Platform</h4>
+<span class="project-note">Current infrastructure architecture</span>
+</div>
+<ul><li>Developing infrastructure architecture for a supplier/procurement platform with 24×7 external supplier access, internal/admin users, 7–10 Node.js microservices, document/PDF processing, SAP file exchange, messaging, and business/audit workloads.</li><li>Comparing incremental expansion of the existing mature RKE2 platform with a separately isolated platform, using reuse, operational maturity, failure domains, security boundaries, and cost as decision factors.</li><li>The expansion model sizes 5 additional workers, a separate 3-node PostgreSQL/Patroni cluster, enhanced log observability, SAP SFTP exchange, ~3 TB object/file storage, two Next.js/Nginx frontend VMs, the six-node Kafka baseline, optional Redis Sentinel, RabbitMQ for queue-oriented workloads, Vault HA, OpenTofu, Helm, and Argo CD; storage options include PCA-native object storage and self-hosted S3-compatible alternatives such as RustFS, SeaweedFS, and Garage.</li><li>Capacity planning is driven by integration traffic, file/PDF processing, background work, queues/retries, database workload, and observability, with named user count treated as only one input to the workload model.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>Core Collective — Gym SaaS AWS Architecture</h4>
+<span class="project-note">Cost-conscious cloud architecture</span>
+</div>
+<ul><li>Designed a lean AWS architecture for a European gym SaaS startup using CloudFront, S3, WAF, ALB, ECS autoscaling, PostgreSQL primary/replica, Redis, SNS/Firebase notification flow, ACM, and VPC networking.</li><li>Used AWS cost modeling and architecture diagrams to align cloud services, availability, and operating overhead with the startup's actual scale.</li><li>Selected managed or dedicated components according to reliability, security, growth, operational ownership, and budget requirements.</li></ul>
+</div>
+<div class="project">
+<div class="project-head">
+<h4>Other Work</h4>
+<span class="project-note">Internal, banking, platform and research work</span>
+</div>
 <ul>
-<li>Worked across solution architecture and DevOps engineering for a nationwide SIM-selling and distribution platform, covering RKE2 Kubernetes, Oracle PCA X10, HAProxy/API gateway, PostgreSQL HA, CI/CD, observability, firewall flows, staging/production planning, redundancy testing, and resource right-sizing.</li>
-<li>Created and maintained architecture diagrams, CI/CD flows, observability diagrams, master sheets, MOPs, network plans, production/staging resource plans, and redundancy documentation.</li>
-<li>Built and supported platform components using GitLab, Jenkins, SonarQube, Trivy, Nexus, Argo CD, Prometheus, Grafana, Alertmanager, Elasticsearch, Kibana, Fleet Server, SNMP traps, PostgreSQL/Patroni, HAProxy, Keepalived, and Oracle PCA security rules.</li>
-<li>Helped deliver the platform in about three months with OSS-heavy tooling. The platform supports 10+ microservices and became a reference model for later workload discussions.</li>
-<li>Performed post-launch right-sizing using production utilization data and reduced resource consumption by roughly 30% while preserving stability.</li>
+<li><strong>RBM — Foreign reserve bank:</strong> supported internal-system infrastructure with Docker, Nginx, Apache HTTPD, SonarQube, Nexus Registry, Apache Superset, and Bash-based failover/DNS switching.</li>
+<li><strong>PMS:</strong> set up PostgreSQL primary/replica, CIS hardening, and Docker-based components for a short performance-management workload.</li>
+<li><strong>Cheers:</strong> assessed Azure Containers, Azure Cosmos DB, Azure DevOps, and cost options for migration from a single VM to a CI/CD-driven platform; the client stayed on the simpler VM architecture after the operational/cost tradeoffs were made clear.</li>
+<li><strong>Internal infrastructure:</strong> maintain HPE ProLiant DL360 Gen9, Proxmox VE, self-hosted GitLab and backups, Nexus Repository, HAProxy/Nginx reverse proxies, dynamic Nginx routing automation, WireGuard/IPsec VPNs, MikroTik routing/NAT, storage expansion, firmware/iLO maintenance, jump-host access, and internal service troubleshooting.</li>
+<li><strong>Automation:</strong> write small Go utilities for internal HAProxy/platform tasks, Python automation for WireGuard/VPN workflows, and Bash scripts for failover, DNS/VIP operations, OCI CLI integration, health checks, and infrastructure administration.</li>
+<li><strong>Research:</strong> evaluated GPUaaS, NVIDIA MIG/vGPU, AI Enterprise licensing, H100/A100 tradeoffs, vLLM/MLOps concepts, firewall/NGFW-as-a-service, OPNsense, Zenarmor, Vault + External Secrets Operator, Envoy Gateway API, VictoriaMetrics/VictoriaLogs, LGTM-style observability, and cloud/network patterns.</li>
 </ul>
-<p><strong>SRA - SIM Registration and Agent Enrollment</strong></p>
+</div>
+</article>
+<article class="role">
+<div class="role-head">
+<div>
+<h3>F1Soft International Pvt. Ltd.</h3>
+<div class="title">DevOps Intern</div>
+</div>
+<div class="role-meta">Lalitpur, Nepal<br/>May 2024 — August 2024</div>
+</div>
 <ul>
-<li>Supported production DevOps work for agent/customer enrollment, KYC, SIM/customer registration, and pack-purchase workflows.</li>
-<li>Troubleshot Kubernetes, HAProxy/network issues, PostgreSQL setup and hardening, observability, deployment support, Google API connectivity, sudden traffic bursts, pod CrashLoop behavior, firewall/NAT behavior, DNS, HAProxy, Kubernetes worker networking, packet captures, tcpdump/Wireshark analysis, and application logs.</li>
-<li>Reclaimed an abandoned 3TB persistent volume and reprovisioned it for Kafka.</li>
+<li>Gained hands-on production exposure to Kubernetes, Argo CD, Helm, HAProxy/Nginx, ELK/Loki, CIS hardening, HashiCorp Vault, Linux administration, and deployment troubleshooting.</li>
+<li>Built the practical foundation later applied in client-facing production platform engineering, HA/recovery, architecture, and automation work.</li>
 </ul>
-<p><strong>FAM CLUB - Messaging and Calling Platform</strong></p>
-<ul>
-<li>Worked across PoC and MVP phases on DevOps, SIP integration, and cloud infrastructure for a family messaging and calling platform involving Matrix/Synapse, LiveKit, SIP, WebRTC, AWS, Oracle PCA X10, and telco SIP trunk integration.</li>
-<li>Designed and tested architectures for Matrix/Synapse, MAS/OIDC, custom backend, LiveKit SFU, LiveKit SIP service, Redis, PostgreSQL/Aurora, Coturn, Sygnal push notifications, MongooseIM evaluation, and AWS deployment.</li>
-<li>Debugged SIP and LiveKit behavior across trunk setup, SIP signaling, RTP/UDP media paths, dispatch rules, firewall ACLs, number formatting, inbound/outbound calling, and WebRTC-to-PSTN flows.</li>
-<li>Validated multiple calling scenarios across local-carrier, cross-telco, international, and landline paths.</li>
-<li>Built Terraform-based AWS MVP infrastructure using ECS, ECR, ALB/NLB, Route 53, ACM, CloudWatch, Aurora PostgreSQL, ElastiCache/Valkey, S3, SES/SNS, Client VPN, IAM, Secrets Manager, SSM, VPC endpoints, and GitLab CI.</li>
-</ul>
-<p><strong>Cloud Suite - Hosting and Payments Platform</strong></p>
-<ul>
-<li>Worked on a hosting-provider platform based on WiseCP, Plesk, CloudLinux, Nginx, DNS, SMTP, WAF integration points, checkout/payment flows, billing modules, and customer provisioning.</li>
-<li>Translated client requirements into sprint plans, project trackers, risks, dependencies, execution plans, and change-management notes.</li>
-<li>Worked directly on WiseCP frontend/theme changes, Plesk/CloudLinux setup, service plans, DNS/TLS, SMTP, WAF routing/security integration points, customer journey validation, KYC requirements, billing handoff formats, and WAF sizing.</li>
-<li>Developed checkout/payment flows for Fonepay dynamic QR and debit/credit card payments, with ongoing billing-module work. Sprint 1 ended ahead of schedule.</li>
-</ul>
-<p><strong>DTE Replacement</strong></p>
-<ul>
-<li>Researched and proposed a replacement design for a legacy container-platform environment using OpenShift, RKE2, KubeSphere, Rancher, and CNCF ecosystem tools.</li>
-<li>Covered GitLab CI, Vault, OWASP Dependency-Check, SonarQube, Trivy, Harbor/Nexus, Argo CD, Kubernetes/RKE2, Rancher, Istio/Cilium, Prometheus, Grafana, Alertmanager, ELK/Loki, Logstash/Promtail, and Kibana.</li>
-<li>Compared vendors, OSS options, licensing, operational fit, migration complexity, and realistic operating responsibility.</li>
-</ul>
-<p><strong>WFMS - Workforce Management System Architecture</strong></p>
-<ul>
-<li>Created architecture material showing how a workforce-management workload could run on the existing private-cloud platform while also preparing GCP architecture and cost comparisons.</li>
-<li>Designed around web/mobile entry, WAF/load balancing, DMZ frontend services, HAProxy/API gateway, RKE2 backend services, CI/CD, observability, PostgreSQL HA, Vault, Redis Sentinel, Kafka, storage, SMTP/SMS, and integrations with existing systems.</li>
-<li>Presented sizing, cloud translation, operational risk, and cloud-native upgrade considerations. The GCP work focused on mapping workload expectations into cloud-native building blocks and cost models instead of directly copying on-prem resource assumptions.</li>
-</ul>
-<p><strong>DIGI PAY - Digital Wallet Advisory</strong></p>
-<ul>
-<li>Reviewed vendor deployment architecture and hardware requirement documents for SIT, UAT, production, and DR environments.</li>
-<li>Mapped requirements against private-cloud/platform constraints and advised leadership on feasibility, timeline, operational responsibility, environment separation, and questions to clarify with the vendor.</li>
-</ul>
-<p><strong>Core Collective - Gym SaaS AWS Architecture</strong></p>
-<ul>
-<li>Designed a lean AWS architecture for a European gym SaaS startup using CloudFront, S3, WAF, ALB, ECS autoscaling, PostgreSQL primary/replica, Redis, SNS/Firebase notification flow, ACM, and VPC networking.</li>
-<li>Used AWS calculator and architecture diagrams to keep the design cloud-native without overspending at startup scale.</li>
-</ul>
-<p><strong>Other Work</strong></p>
-<ul>
-<li><strong>RBM - Foreign reserve bank:</strong> Supported internal-system infrastructure with Docker, Nginx, Apache HTTPD, SonarQube, Nexus Registry, Apache Superset, and Bash-based failover/DNS switching.</li>
-<li><strong>PMS:</strong> Set up PostgreSQL master/replica, CIS hardening, and Docker-based components for a short performance-management workload.</li>
-<li><strong>Cheers:</strong> Assessed Azure Containers, Azure Cosmos DB, Azure DevOps, and cost options for a proposed migration from a single VM to a CI/CD-driven platform; the client chose to remain on the existing VM setup after seeing the tradeoffs.</li>
-<li><strong>Internal infrastructure:</strong> Maintained HPE ProLiant DL360 Gen9, Proxmox VE, self-hosted GitLab, GitLab backups, Nexus Repository, HAProxy/Nginx reverse proxy, dynamic Nginx routing automation, WireGuard/IPsec VPN, MikroTik routing/NAT, storage expansion, firmware/iLO maintenance, jump-host access, and Bash automation.</li>
-<li><strong>Research:</strong> Evaluated GPUaaS, NVIDIA MIG/vGPU, AI Enterprise licensing, H100/A100 tradeoffs, vLLM/MLOps concepts, firewall/NGFW-as-a-service, OPNsense, Zenarmor, Vault + External Secrets Operator, Envoy Gateway API, VictoriaMetrics, LGTM stack, and cloud networking patterns.</li>
-</ul>
-<h3>F1Soft International Pvt. Ltd. - DevOps Intern</h3>
-<p><strong>Lalitpur, Nepal | May 2024 - August 2024</strong></p>
-<ul>
-<li>Gained hands-on production exposure to Kubernetes, Argo CD, Helm, HAProxy/Nginx, ELK/Loki, CIS hardening, and HashiCorp Vault.</li>
-<li>Built practical foundation later applied in client-facing platform engineering and production-support work.</li>
-</ul>
+</article>
+</section>
+<section>
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">
+<strong>Cloud Native &amp; Platform</strong>
+<p>Kubernetes, RKE2, K3s, Docker, Podman, Helm, Argo CD, Rancher, Gateway API, Envoy Gateway, GitOps.</p>
+</div>
+<div class="skill">
+<strong>Cloud &amp; Hybrid</strong>
+<p>Oracle PCA X10, AWS ECS/ECR/Aurora/ElastiCache/ALB/NLB/Route 53/CloudFront/S3/WAF/ACM/CloudWatch/SES/SNS/Client VPN, GCP architecture/cost modeling, Azure platform assessment, Proxmox VE.</p>
+</div>
+<div class="skill">
+<strong>CI/CD, IaC &amp; Automation</strong>
+<p>GitLab CI, Jenkins, Terraform, Ansible, SonarQube, Trivy, Nexus Repository, Harbor evaluation, OWASP Dependency-Check, Bash, Python, Go, OCI CLI.</p>
+</div>
+<div class="skill">
+<strong>Data, Messaging &amp; HA</strong>
+<p>PostgreSQL, Patroni, etcd, HAProxy/Keepalived, Kafka/KRaft, Redis, Redis Sentinel, Valkey, RabbitMQ architecture, MySQL/MariaDB, MongoDB, backup/restore, failover/failback.</p>
+</div>
+<div class="skill">
+<strong>Observability &amp; Reliability</strong>
+<p>Prometheus, Grafana, Alertmanager, Elasticsearch, Kibana, Fleet Server, ELK/Loki, Tempo, VictoriaMetrics/VictoriaLogs evaluation, CloudWatch, PromQL, SNMP traps, OID/MIB mapping, FMS/SOC alerting, metrics/log alerting, exporters, RCA, redundancy testing, tcpdump, Wireshark.</p>
+</div>
+<div class="skill">
+<strong>Networking &amp; Security</strong>
+<p>HAProxy, Nginx, Apache, DNS, TLS/mTLS, OpenSSL, WireGuard, IPsec, MikroTik, firewall/NAT, FortiWeb/WAF, appliance and OS-level tunnels, Vault, CIS hardening, network segmentation, ISO 27001-aligned environments.</p>
+</div>
+<div class="skill">
+<strong>Storage &amp; DR</strong>
+<p>Ceph, RGW/S3, CephFS, NFS-Ganesha, erasure coding, replication, rack/failure-domain design, storage/client/recovery fabrics, warm/cold standby, RTO/RPO, fencing/STONITH, DR runbooks.</p>
+</div>
+<div class="skill">
+<strong>Real-time, Hosting &amp; Integrations</strong>
+<p>Matrix/Synapse, MAS, Sygnal, MongooseIM, ejabberd, XMPP, WebRTC, SIP trunks, LiveKit SFU/SIP, Coturn, WiseCP, Plesk, CloudLinux, WHMCS, SMTP relay, DNS glue records, billing workflows, payment gateways, payment testing/validation, SMS modules, SAP/SFTP file exchange.</p>
+</div>
+<div class="skill">
+<strong>Architecture &amp; Client Delivery</strong>
+<p>Infrastructure architecture, capacity/sizing, cloud cost modeling, security review, HLD/LLD, MOPs, RCAs, DR proposals, audit evidence, sprint/project planning, risk/dependency management, RACI, Gantt timelines, communication matrices, client presentations, stakeholder communication, vendor/bank coordination, infrastructure/security advisory.</p>
+</div>
+
+</div>
+</section>
+<section>
 <h2>Education</h2>
 <p><strong>Bachelor of Engineering, Computer Engineering</strong></p>
 <p>Tribhuvan University, Institute of Engineering | Graduated April 2024</p>
-<h2>Skills</h2>
-<p><strong>Cloud Native:</strong> Kubernetes, RKE2, K3s, Docker, Podman, Helm, Argo CD, Rancher, Gateway API, Envoy Gateway.</p>
-<p><strong>Cloud and Hybrid:</strong> Oracle PCA X10, AWS ECS/ECR/Aurora/ElastiCache/ALB/NLB/Route 53/CloudFront/S3/WAF/ACM/CloudWatch/SES/SNS/Client VPN, Azure container platform design, GCP architecture/cost modeling, Proxmox VE.</p>
-<p><strong>CI/CD and DevSecOps:</strong> GitLab CI, Jenkins, SonarQube, Trivy, Nexus Repository, Harbor evaluation, OWASP Dependency-Check, GitOps.</p>
-<p><strong>Data and HA:</strong> PostgreSQL, Patroni, etcd, HAProxy/Keepalived, Redis, Redis Sentinel, Valkey, MySQL/MariaDB, MongoDB, backup/restore, failover/failback.</p>
-<p><strong>Networking and Security:</strong> HAProxy, Nginx, Apache, DNS, TLS, mTLS, OpenSSL, WireGuard, IPsec, MikroTik, firewall/NAT, WAF, Vault, CIS hardening, ISO-aligned environments.</p>
-<p><strong>Real-time Communication and Hosting:</strong> Matrix/Synapse, MAS, Sygnal, MongooseIM, ejabberd, XMPP, WebRTC, SIP trunks, LiveKit SFU, LiveKit SIP, Coturn, WiseCP, Plesk, CloudLinux, checkout/payment flows, billing modules.</p>
-    <div class="actions">
-        <a class="linkedin-button" href="https://www.linkedin.com/in/abhinashshrestha/" target="_blank" rel="noopener">Message me on LinkedIn &rarr;</a>
-    </div>
+</section>
+<a class="linkedin-button" href="https://www.linkedin.com/in/abhinashshrestha/" rel="noopener" target="_blank">Message me on LinkedIn →</a>
+</main>
 </body>
 </html>
