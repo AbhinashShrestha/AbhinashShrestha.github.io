@@ -4,7 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Abhinash Shrestha</title>
+<title>Abhinash Shrestha | DevOps Engineer</title>
+<meta name="description" content="DevOps engineering across production platforms, cloud infrastructure, AI, telecom, payments and hosting. Project delivery, architecture, client consultation and ongoing operations."/>
+<link rel="canonical" href="https://abhinashshrestha.github.io/"/>
 <style>
     :root {
       --bg: #ffffff;
@@ -143,7 +145,12 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      white-space: nowrap;
+      white-space: normal;
+      text-align: right;
+      text-transform: none;
+      letter-spacing: 0;
+      max-width: 260px;
+      flex-shrink: 0;
     }
 
     .context {
@@ -257,189 +264,399 @@
         break-inside: avoid;
       }
     }
+  
+    html { scroll-padding-top: 20px; }
+    a { color: var(--text); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--dark); outline-offset: 4px; }
+    .skip-link { position: absolute; top: 8px; left: 8px; padding: 8px; background: white; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+    .contacts, .page-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; font-size: .92rem; }
+    .contacts span { color: var(--muted); }
+    .page-nav { padding-top: 14px; border-top: 1px solid var(--border); }
+    .cv-link { font-weight: 700; }
+    .project-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; margin: 20px 0 28px; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .project-index p { margin-bottom: 6px; font-size: .87rem; font-weight: 700; }
+    .project-index ul { list-style: none; margin: 0; padding: 0; }
+    .project-index li { padding: 0; margin: 5px 0; font-size: .87rem; }
+    .project-group { margin-top: 32px; }
+    .project-group h3 { font-size: 1.05rem; }
+    .project-head h4 { flex: 1; }
+    .project li { margin: 10px 0; }
+    .project li strong { font-weight: 650; }
+    .project-note { text-transform: none; letter-spacing: 0; }
+    .back-link { display: inline-block; margin-top: 14px; font-size: .85rem; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .84rem; }
+    @media (max-width: 700px) {
+      .project-index { grid-template-columns: 1fr; gap: 16px; }
+      .project-note { max-width: none; text-align: left; }
+      h1 { overflow-wrap: break-word; }
+      li, p, a { overflow-wrap: break-word; }
+    }
+    @media print {
+      .skip-link, .page-nav, .project-index, .back-link { display: none; }
+      body { font-size: 10pt; }
+      .project { break-inside: auto; }
+      h2, h3, h4, .project-head, .context { break-after: avoid; }
+      li { break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
-<main class="page">
+<a class="skip-link" href="#work">Skip to work</a>
+<main class="page" id="top">
 <header>
 <h1>Abhinash Shrestha</h1>
-<p class="subtitle">DevOps Engineer — Production platform engineering, high-availability systems, cloud and private-cloud infrastructure, automation, incident recovery, and client-facing architecture.</p>
+<div class="contacts">
+<a href="https://www.linkedin.com/in/abhinashshrestha/">LinkedIn</a>
+<a href="https://github.com/AbhinashShrestha">GitHub</a>
+</div>
+<nav class="page-nav" aria-label="Page sections">
+<a href="#work">Work</a><a href="#skills">Technical skills</a><a href="#education">Education</a>
+</nav>
 </header>
-<section>
-<h2>Profile</h2>
+<section aria-labelledby="profile-heading">
+<h2 id="profile-heading">Profile</h2>
 <div class="profile">
-<p>DevOps Engineer with hands-on production ownership across platform engineering, high-availability systems, cloud and private-cloud infrastructure, automation, networking/security, observability, disaster recovery, and client-facing technical delivery. I design, build, automate, operate, troubleshoot, recover, and improve systems spanning RKE2/Kubernetes, PostgreSQL/Patroni HA, Kafka/KRaft, CI/CD/GitOps, Oracle PCA X10, AWS, storage platforms, SIP/WebRTC, hosting, payments, and enterprise integrations.</p>
-<p>I work directly with clients, vendors, and engineering stakeholders to understand business objectives, workload characteristics, integration dependencies, security and availability requirements, operational constraints, and budget, then translate them into fit-for-purpose architecture, sizing, implementation plans, automation, monitoring, testing, documentation, and operational handover. My approach balances reliability, security, operability, growth, and cost so the platform matches the workload and the organization that has to run it.</p>
+<p>I’m a DevOps Engineer responsible for client infrastructure from requirements and architecture through implementation, production support and upgrades. My work spans telecom, payments, hosting, communications and self-hosted AI across cloud and on-premises environments.</p>
+<p>I work directly with clients, vendors and developers to understand the workload, explain architecture choices and turn them into sizing, implementation plans and systems that the team can operate. That includes availability and recovery, automation, integrations, security boundaries, budget and future growth. The projects below show both delivery and the decisions behind it.</p>
 </div>
 </section>
-<section>
-<h2>Work Experience</h2>
+<section id="work" aria-labelledby="work-heading">
+<h2 id="work-heading">Work experience</h2>
 <article class="role">
 <div class="role-head">
-<div>
-<h3>Smart Solutions Technology Pvt. Ltd.</h3>
-<div class="title">DevOps Engineer — platform, infrastructure, production support and architecture responsibilities</div>
+<div><h3>Smart Solutions Technology Pvt. Ltd.</h3><div class="title">DevOps Engineer</div></div>
+<div class="role-meta">October 2024 – Present</div>
 </div>
-<div class="role-meta">Kamaladi, Kathmandu, Nepal<br/>October 2024 — Present</div>
-</div>
-<p class="role-summary">Work across telco, hosting, banking/internal systems, SaaS, payments, real-time communication, storage, and internal infrastructure. Responsibilities include production platform delivery, infrastructure architecture, CI/CD, observability, PostgreSQL HA, network/security integration, cloud/private-cloud design, DR, automation, project coordination, technical documentation, and direct client discussions/presentations.</p>
-<div class="project">
+<p class="role-summary">Architecture, sizing, implementation and continuing operations across client and internal platforms. The work includes client meetings and technical presentations, platform/application development, vendor coordination, migrations, upgrades and incident recovery.</p>
+<nav class="project-index" aria-label="Project index">
+<div><p>Platform delivery and production operations</p><ul>
+<li><a href="#dms">Ncell DMS</a></li>
+<li><a href="#support">Production support across client platforms</a></li>
+<li><a href="#sra">Ncell SRA</a></li>
+<li><a href="#ai">AI platform architecture and self-hosted inference</a></li>
+<li><a href="#famclub">FAM CLUB</a></li>
+<li><a href="#cloudsuite">Ncell CloudSuite</a></li>
+<li><a href="#digipay">DigiPay</a></li>
+</ul></div>
+<div><p>Solution architecture and client decisions</p><ul>
+<li><a href="#source2pay">Source2Pay</a></li>
+<li><a href="#staas">STaaS</a></li>
+<li><a href="#wfms">Ncell WFMS</a></li>
+<li><a href="#idp">Internal Developer Platform</a></li>
+<li><a href="#dte">Ncell DTE replacement</a></li>
+<li><a href="#corecollective">Core Collective</a></li>
+<li><a href="#cheers">Cheers</a></li>
+</ul></div>
+<div><p>Internal infrastructure, labs and service research</p><ul>
+<li><a href="#internal">Internal infrastructure and operational automation</a></li>
+<li><a href="#rbm">Reserve Bank of Malawi</a></li>
+<li><a href="#pms">PMS</a></li>
+<li><a href="#fusionpbx">FusionPBX / FreeSWITCH telephony</a></li>
+<li><a href="#openstack">GCP / OpenStack all-in-one lab</a></li>
+<li><a href="#openbao">OpenBao secrets-management lab</a></li>
+<li><a href="#service-research">GPUaaS and firewall/NGFW-as-a-service</a></li>
+</ul></div>
+</nav>
+<section class="project-group" id="platforms" aria-labelledby="platforms-heading"><h3 id="platforms-heading">Platform delivery and production operations</h3>
+<article class="project" id="dms">
 <div class="project-head">
-<h4>DMS — Distribution Management System</h4>
-<span class="project-note">Nationwide telco production platform</span>
+<h4>Ncell DMS — Distribution Management System</h4>
+<span class="project-note">Production platform and ongoing operations</span>
 </div>
-<p class="context">A nationwide SIM-selling and distribution platform running on Oracle PCA X10 with RKE2, PostgreSQL/Patroni HA, DMZ/frontend components, CI/CD/GitOps, observability, messaging, enterprise integrations, and client-owned firewall/WAF/network controls.</p>
-<ul><li>Designed, delivered, and operated the production platform on Oracle PCA X10, including an 11-node RKE2 topology (3 dedicated etcd, 3 control-plane, 5 workers), HAProxy/API-gateway paths, PostgreSQL/Patroni HA, CI/CD/GitOps, observability, firewall flows, and production support for 10+ microservices.</li><li>Built and maintained the delivery and operations stack across GitLab, Jenkins, SonarQube, Trivy, Nexus, Helm, Argo CD, Prometheus, Grafana, Alertmanager, Elasticsearch/Kibana/Fleet, PromQL rules, SNMP traps with OID/MIB mapping and FMS/SOC integration, Keycloak, PostgreSQL/Patroni, etcd, HAProxy, and Keepalived.</li><li>Authored and maintained HLD/LLD material, architecture and observability diagrams, IP/VIP and network plans, capacity sheets, firewall requirements, MOPs, runbooks, redundancy tests, RCAs, security reviews, and audit/client evidence.</li><li>Delivered the initial working PCA X10 platform in roughly three months using an OSS-heavy toolchain, then continued to operate, troubleshoot, optimize, and evolve it after production go-live.</li><li>Right-sized the platform using production utilization, Kubernetes requests/limits, VM metrics, and Grafana/Kibana data, reducing allocated infrastructure resources by roughly 30% while preserving stability and HA headroom.</li><li>Planned and executed rolling RKE2 certificate renewal across all 11 production nodes with zero service outage, including pre-change health checks, verified etcd snapshot, node-by-node restart, post-change node/pod/API/certificate validation, rollback planning, and client/audit documentation.</li><li>Performed RCA after a datacenter fault stopped one Patroni/PostgreSQL member and related etcd components; the HA design kept database service available through the remaining leader and synchronous standby with zero database outage.</li><li>Diagnosed timeline divergence after the failed infrastructure returned, performed the required manual recovery/rejoin, restored streaming replication, and verified all three PostgreSQL nodes, 0 MB lag, common timeline state, and healthy etcd membership.</li><li>Automated HA operations with Bash and OCI CLI, including VIP reassignment to the active Patroni leader and VIP/failover handling around HAProxy service paths.</li><li>Deployed and hardened Redis with RDB/AOF persistence, metrics, Grafana dashboards, operational checks, and Sentinel/live-replication options for improving availability.</li><li>Designed a multi-datacenter warm-standby DR plan covering standby Kubernetes, Patroni promotion, GitLab, Nexus, Keycloak, HAProxy, frontend services, backups, fencing/STONITH, approval gates, automated failover/failback, smoke tests, observability, and DR drills; documented the factors governing achievable RTO/RPO for client agreement.</li><li>Performed a credential-management/security review and proposed Vault/External Secrets, automated rotation, audit logging, anomaly detection, tracing, and log-based alerting; regularly present and advise client infrastructure/security teams on HA, observability, DR, capacity, secrets, platform changes, and operational risk.</li></ul>
-<p class="stack"><strong>Environment:</strong> Oracle PCA X10, RKE2, Kubernetes, GitLab, Jenkins, SonarQube, Trivy, Nexus, Helm, Argo CD, PostgreSQL, Patroni, etcd, HAProxy, Keepalived, Keycloak, Prometheus, Grafana, Alertmanager, Elasticsearch/Kibana/Fleet, SNMP, Bash, OCI CLI.</p>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>SRA — SIM Registration and Agent Enrollment</h4>
-<span class="project-note">Production telco integration and messaging</span>
-</div>
-<ul><li>Operate and troubleshoot production infrastructure supporting agent/customer enrollment, KYC, SIM/customer registration, and pack-purchase workflows across Kubernetes, HAProxy, PostgreSQL, DNS, firewall/NAT, worker networking, external APIs, pod failures, and traffic bursts.</li><li>Diagnosed OCR/Google API connectivity failures across Kubernetes worker networking, HAProxy, Cisco/Oracle firewall paths, DNS, TCP resets/retransmissions, and application logs using metrics, Elasticsearch/Kibana, tcpdump, Wireshark, and packet-level analysis; coordinated troubleshooting with client, vendor, cloud/API, and internal teams.</li><li>Configured and troubleshot regulated mTLS API integrations using certificate conversion, Kubernetes TLS/CA secrets, OpenSSL, curl, and server-side certificate-validation debugging for national-ID/eSIM-style workflows.</li><li>Recovered and repurposed an abandoned 3 TB persistent volume for the messaging workload, preserving existing storage capacity.</li><li>Built the SRA-to-DMS messaging platform as a 6-node Kafka KRaft cluster with Ansible using 3 dedicated controllers and 3 dedicated brokers.</li><li>Configured controller quorum, broker-only client access, SCRAM-SHA-512 authentication, scoped users/ACLs, disabled unwanted topic auto-creation, and configured the transaction topic with RF3/min-ISR2.</li><li>Integrated monitoring/exporters and validated controller quorum, authenticated brokers, ISR/replica health, SRA producer-to-DMS consumer flow, ACL behavior, idempotent Ansible reruns, and broker/controller redundancy and recovery.</li></ul>
-<p class="stack"><strong>Environment:</strong> Kubernetes/RKE2, HAProxy, PostgreSQL, Apache Kafka/KRaft, Ansible, SCRAM/ACLs, Prometheus/Grafana exporters, Elasticsearch/Kibana, Linux networking, tcpdump, Wireshark.</p>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>FAM CLUB — Messaging and Calling Platform</h4>
-<span class="project-note">AWS / SIP / WebRTC</span>
-</div>
-<ul><li>Delivered PoC and MVP DevOps, SIP-integration, and cloud-infrastructure work for a family messaging/calling platform involving Matrix/Synapse, LiveKit, SIP, WebRTC, AWS, Oracle PCA X10, and telco SIP trunk integration.</li><li>Designed and tested architecture for Matrix/Synapse, MAS/OIDC, custom backend services, LiveKit SFU/SIP, Redis, PostgreSQL/Aurora, Coturn, Sygnal push notifications, MongooseIM evaluation, and cloud/on-prem deployment options.</li><li>Diagnosed SIP signaling, RTP/UDP media paths, dispatch rules, firewall ACLs, E.164/number formatting, codec behavior, routing, and distributed-mode issues; validated local-carrier, cross-telco, international, and landline calling flows.</li><li>Built Terraform-based AWS MVP infrastructure using ECS, ECR, ALB/NLB, Route 53, ACM, CloudWatch, Aurora PostgreSQL, ElastiCache/Valkey, S3, SES/SNS, Client VPN, IAM, Secrets Manager, SSM, VPC endpoints, and GitLab CI.</li><li>Implemented GitLab CI for image builds, migrations, task-definition registration, ECS rollout, and log verification, while evaluating messaging/backend options against the MVP's cost and operating model.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>Cloud Suite / Ncell Cloud — Hosting, Billing, Payments, SMS and SAP Integration</h4>
-<span class="project-note">Hosting platform / integration / delivery coordination</span>
-</div>
-<ul><li>Delivered infrastructure and integration work across a hosting and billing platform built on WiseCP, Plesk, CloudLinux, Nginx, DNS, SMTP, WAF integration, customer provisioning, KYC, checkout/payment flows, billing modules, SAP/SFTP file exchange, and enterprise dependencies.</li><li>Worked directly with Ncell stakeholders to clarify business, integration, delivery, and operational requirements, then converted them into sprint/day-wise execution plans, project trackers, risks/dependencies, implementation assumptions, change notes, and delivery follow-up; coordinated infrastructure, application, billing, payment, SMS, bank/payment-partner, and internal teams. Sprint 1 completed ahead of schedule.</li><li>Implemented and validated WiseCP frontend/theme changes, Plesk/CloudLinux setup, service plans, DNS/TLS, SMTP, WAF routing/security integration points, customer journeys, billing handoff formats, SAP file-transfer requirements, and infrastructure/WAF sizing.</li><li>Developed and tested two payment gateway integrations, including Fonepay dynamic QR and debit/credit-card payment flows, and built SMS modules; coordinated integration testing, issue resolution, and validation with Ncell, banks/payment partners, application/infrastructure teams, and internal delivery teams.</li><li>Implemented and validated SFTP-based SAP/billing file handoffs with controlled inbound/outbound paths, private runtime storage, retention/processing expectations, and separation from the public web layer; created an OS-level network tunnel where the project topology required a host-level path and coordinated the associated routing/access.</li><li>Designed the platform's cold-standby DR for Plesk, WiseCP, and PostgreSQL using daily backups, restore-on-demand, proposed 24-hour RTO/RPO, shared backup reachability, DNS/IP/WAF cutover, fencing considerations, and restore-validation gates; separated SMART application/OS recovery responsibility from Ncell-owned infrastructure, DNS, routing, IP, and WAF cutover.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>DTE Replacement — Legacy Container Platform Modernization</h4>
-<span class="project-note">Legacy platform assessment</span>
-</div>
-<ul><li>Researched and proposed replacement architecture for a legacy Ncell container-platform environment, with migration/coexistence and enterprise network/security constraints treated as part of the design.</li><li>Compared OpenShift, RKE2, KubeSphere, Rancher, and related CNCF options against the existing environment, operational capability, licensing, migration effort, support model, security, and long-term operating responsibility.</li><li>Designed the surrounding platform toolchain across GitLab CI, Vault, OWASP Dependency-Check, SonarQube, Trivy, Harbor/Nexus, Argo CD, Kubernetes/RKE2, Rancher, Istio/Cilium, Prometheus, Grafana, Alertmanager, ELK/Loki, Logstash/Promtail, and Kibana.</li><li>Presented the trade-offs as a complete platform-modernization decision covering orchestration, migration complexity, maintainability, security boundaries, and realistic ownership after implementation.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>Internal Developer Platform — On-Prem Platform Proposal</h4>
-<span class="project-note">100+ services / self-service / GitOps</span>
-</div>
-<ul><li>Authored an on-prem Internal Developer Platform proposal for 100+ services covering self-service namespace provisioning, GitLab project/scaffolding workflows, CI generation, Helm/manifest templating, Argo CD deployment, RBAC, Vault-backed secrets, approval workflows, observability links, and a centralized service catalog.</li><li>Designed the operating model around repeatable service onboarding, governance, security boundaries, deployment consistency, developer self-service, and platform visibility while keeping Kubernetes ownership explicit for the operating teams.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>WFMS — Workforce Management System Architecture</h4>
-<span class="project-note">Private cloud / GCP comparison</span>
-</div>
-<ul><li>Created infrastructure architecture showing how a workforce-management workload could reuse the existing private-cloud platform, alongside an alternative GCP architecture and cost model.</li><li>Designed around web/mobile entry, WAF/load balancing, DMZ frontend services, HAProxy/API gateway, RKE2 backend services, CI/CD, observability, PostgreSQL HA, Vault, Redis Sentinel, Kafka, storage, SMTP/SMS, and existing enterprise integrations.</li><li>Presented infrastructure sizing, cloud translation, operational risk, availability trade-offs, and cloud-native upgrade options, mapping workload requirements into suitable GCP building blocks and service-level cost models.</li><li>Compared extension of the existing platform with a separate platform across reuse, isolation, operational maturity, failure domains, and total operating cost.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>Digital Wallet Platform — Bank API &amp; Internal-System Connectivity</h4>
-<span class="project-note">Staging / FortiWeb / regulated integration</span>
-</div>
-<ul><li>Reviewed staging and target SIT/UAT/production/DR architecture and hardware requirements, mapping DNS, VPN/VPC, public IP, load-balancing, database, sizing, environment separation, and security/network dependencies against the existing Ncell environment.</li><li>Implemented multiple FortiWeb appliance tunnels/connectivity paths for partner-bank API access and separate Ncell internal-system connectivity.</li><li>Mapped and coordinated source/destination paths, routing, firewall rules, and approved service ports with client infrastructure/security teams, then supported connectivity validation and issue isolation across the application, WAF, firewall, and network layers.</li><li>Explained the resulting connectivity/architecture model to client stakeholders and advised on feasibility, sequencing, environment separation, operational responsibility, security implications, and vendor dependencies.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>STaaS — Ceph Storage-as-a-Service Architecture</h4>
-<span class="project-note">Large-scale storage design and client presentation</span>
-</div>
-<ul><li>Designed and presented an initial 30 PB raw Ceph architecture for S3, CephFS, and NFS using enterprise SAS SSD/NVMe, EC 4+2 for the main capacity tier, 3× replicated NVMe for metadata/index/log and latency-sensitive small data, and a 20% operational reserve.</li><li>Calculated the protection and sellable-capacity impact of 3× replication, EC 4+2, and EC 8+4, with the 30 PB baseline yielding approximately 8 PB sellable under 3× replication or 16 PB under EC 4+2 after reserve.</li><li>Converted the raw-capacity target into physical topology options of roughly 82 storage nodes with 24×15.36 TB SAS SSD or 41 nodes with 24×30.72 TB NVMe, accounting for rack density, power/cooling, switch ports, and CRUSH/failure-domain requirements.</li><li>Separated OSD/data, metadata/index, MON, MGR, MDS, RGW, and NFS-Ganesha roles and created role-specific CPU, RAM, disk, and network baselines.</li><li>Designed distinct public S3, VPN-only NFS, integration, and administration paths, including an active HAProxy edge with ECMP/BGP-anycast concepts, a 100/200 GbE-class client/service fabric, isolated cluster/replication networking, and separate administration/OOB access.</li><li>Presented the capacity arithmetic, EC/replication trade-offs, rack/failure-domain behavior, service roles, network fabrics, scaling path, and the distinction between local HA and site-level DR directly to the client.</li><li>When the original scale exceeded the available budget, redesigned the same project for at least 300 TB sellable using 10 data servers across 3 racks with rack-aware EC 4+2 and separate metadata/control/RGW roles.</li><li>Calculated 614.40 TB raw initial capacity to 409.60 TB after EC 4+2 and approximately 327.68 TB sellable after the 20% reserve, with a disk-expansion path to roughly 409.60 TB sellable while retaining rack failure domains, role separation, access-plane separation, service/recovery fabrics, and operational reserve.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>SourcePilot — Procurement / Supplier Platform</h4>
-<span class="project-note">Current infrastructure architecture</span>
-</div>
-<ul><li>Developing infrastructure architecture for a supplier/procurement platform with 24×7 external supplier access, internal/admin users, 7–10 Node.js microservices, document/PDF processing, SAP file exchange, messaging, and business/audit workloads.</li><li>Comparing incremental expansion of the existing mature RKE2 platform with a separately isolated platform, using reuse, operational maturity, failure domains, security boundaries, and cost as decision factors.</li><li>The expansion model sizes 5 additional workers, a separate 3-node PostgreSQL/Patroni cluster, enhanced log observability, SAP SFTP exchange, ~3 TB object/file storage, two Next.js/Nginx frontend VMs, the six-node Kafka baseline, optional Redis Sentinel, RabbitMQ for queue-oriented workloads, Vault HA, OpenTofu, Helm, and Argo CD; storage options include PCA-native object storage and self-hosted S3-compatible alternatives such as RustFS, SeaweedFS, and Garage.</li><li>Capacity planning is driven by integration traffic, file/PDF processing, background work, queues/retries, database workload, and observability, with named user count treated as only one input to the workload model.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>Core Collective — Gym SaaS AWS Architecture</h4>
-<span class="project-note">Cost-conscious cloud architecture</span>
-</div>
-<ul><li>Designed a lean AWS architecture for a European gym SaaS startup using CloudFront, S3, WAF, ALB, ECS autoscaling, PostgreSQL primary/replica, Redis, SNS/Firebase notification flow, ACM, and VPC networking.</li><li>Used AWS cost modeling and architecture diagrams to align cloud services, availability, and operating overhead with the startup's actual scale.</li><li>Selected managed or dedicated components according to reliability, security, growth, operational ownership, and budget requirements.</li></ul>
-</div>
-<div class="project">
-<div class="project-head">
-<h4>Other Work</h4>
-<span class="project-note">Internal, banking, platform and research work</span>
-</div>
+<p class="context">A nationwide SIM-selling and distribution platform on Oracle PCA X10. My work covers the platform architecture, implementation, delivery tooling, database availability and continued production support.</p>
 <ul>
-<li><strong>RBM — Foreign reserve bank:</strong> supported internal-system infrastructure with Docker, Nginx, Apache HTTPD, SonarQube, Nexus Registry, Apache Superset, and Bash-based failover/DNS switching.</li>
-<li><strong>PMS:</strong> set up PostgreSQL primary/replica, CIS hardening, and Docker-based components for a short performance-management workload.</li>
-<li><strong>Cheers:</strong> assessed Azure Containers, Azure Cosmos DB, Azure DevOps, and cost options for migration from a single VM to a CI/CD-driven platform; the client stayed on the simpler VM architecture after the operational/cost tradeoffs were made clear.</li>
-<li><strong>Internal infrastructure:</strong> maintain HPE ProLiant DL360 Gen9, Proxmox VE, self-hosted GitLab and backups, Nexus Repository, HAProxy/Nginx reverse proxies, dynamic Nginx routing automation, WireGuard/IPsec VPNs, MikroTik routing/NAT, storage expansion, firmware/iLO maintenance, jump-host access, and internal service troubleshooting.</li>
-<li><strong>Automation:</strong> write small Go utilities for internal HAProxy/platform tasks, Python automation for WireGuard/VPN workflows, and Bash scripts for failover, DNS/VIP operations, OCI CLI integration, health checks, and infrastructure administration.</li>
-<li><strong>Research:</strong> evaluated GPUaaS, NVIDIA MIG/vGPU, AI Enterprise licensing, H100/A100 tradeoffs, vLLM/MLOps concepts, firewall/NGFW-as-a-service, OPNsense, Zenarmor, Vault + External Secrets Operator, Envoy Gateway API, VictoriaMetrics/VictoriaLogs, LGTM-style observability, and cloud/network patterns.</li>
+<li><strong>Platform delivery.</strong> Delivered the initial working platform in about three months for 10+ microservices. The 11-node RKE2 topology separates three etcd nodes, three control-plane nodes and five workers, with HAProxy/API-gateway paths, DMZ/frontend components and PostgreSQL HA.</li>
+<li><strong>Capacity decisions.</strong> Used production utilization, Kubernetes requests/limits, VM metrics and Grafana/Kibana data to reduce allocated resources by about 30% while retaining availability headroom. Capacity recommendations account for the workload and failure scenarios.</li>
+<li><strong>Delivery workflow.</strong> Established and maintain CI/CD and GitOps delivery through GitLab, Jenkins, SonarQube and Trivy checks, Nexus artifact storage, Helm and Argo CD rollout. Continue troubleshooting build, registry, image and deployment paths alongside application teams.</li>
+<li><strong>Operational visibility.</strong> Integrated Prometheus, Grafana, Alertmanager and Elasticsearch/Kibana/Fleet with the client’s SOC/FMS. Mapped SNMP OIDs/MIBs and traps, wrote PromQL alerts and tuned thresholds to the client’s operating requirements.</li>
+<li><strong>Database availability and recovery.</strong> Manage PostgreSQL with Patroni, etcd, HAProxy and Keepalived, including hardening, backups and failover validation. After a datacenter fault, the remaining leader and synchronous standby maintained database availability. Diagnosed the returned member’s timeline divergence, recovered and rejoined it, then verified streaming replication, zero lag and healthy etcd membership.</li>
+<li><strong>Upgrades without service interruption.</strong> Renewed certificates across all 11 RKE2 nodes without service outage, using pre-change health checks, a verified etcd snapshot, rolling restarts, post-change validation and rollback preparation.</li>
+<li><strong>Air-gapped recovery.</strong> Restored Argo CD and Cilium/Hubble through offline image transfer/import, pull-policy correction and certificate repair. Configured automated Hubble certificate rotation so recovery did not depend on another manual certificate replacement.</li>
+<li><strong>Recovery architecture.</strong> Defined a multi-datacenter warm-standby design for Kubernetes, PostgreSQL, GitLab, Nexus, Keycloak, HAProxy and frontend services. The plan covers backups, promotion, fencing/STONITH, approval gates, failover/failback automation, smoke tests, observability and drills; achievable RTO/RPO remain tied to the agreed recovery process.</li>
+<li><strong>Client delivery and documentation.</strong> Translate architecture into HLD/LLD documents, network/IP/VIP plans, capacity sheets, communication matrices, firewall requirements, MOPs and runbooks. Present changes and recommendations to infrastructure/security teams, document RCAs and handover, and review credentials, secrets rotation, audit logging and tracing as improvement proposals.</li>
 </ul>
+</article>
+<article class="project" id="support">
+<div class="project-head">
+<h4>Production support across client platforms</h4>
+<span class="project-note">Ongoing troubleshooting and technical consultation</span>
 </div>
+<p class="context">Support legacy and newer platforms while delivering new infrastructure. The work spans application, operating-system, Kubernetes, database, network and external-service boundaries.</p>
+<ul>
+<li><strong>Fault isolation across teams.</strong> Work with client infrastructure and application teams, internal developers, and vendors including Cisco, F5, Google and Oracle/WDN. Correlate logs, metrics, packet captures and network evidence to locate the failing layer and coordinate the next action.</li>
+<li><strong>Practical operating support.</strong> Troubleshoot ingress, DNS/TLS, VPNs, firewalls/NAT, worker networking, pod failures, traffic bursts and external API paths. Advise developers on deployment assumptions, connection pools, resource allocation, access dependencies and operational risk.</li>
+<li><strong>Regulated integrations.</strong> Investigated OCR/Google API connectivity failures through DNS, TCP reset/retransmission and firewall paths. Configured and debugged national-ID/eSIM mTLS integrations using certificate conversion, Kubernetes TLS/CA secrets, OpenSSL, curl and server-side validation evidence.</li>
+</ul>
+</article>
+<article class="project" id="sra">
+<div class="project-head">
+<h4>Ncell SRA — SIM registration and agent enrollment</h4>
+<span class="project-note">Production integration, messaging and data-store operations</span>
+</div>
+<p class="context">Infrastructure support for enrollment, KYC, SIM/customer registration and pack-purchase workflows, with a later Kafka delivery for SRA-to-DMS events.</p>
+<ul>
+<li><strong>Kafka delivery.</strong> Implemented a six-node Kafka/KRaft platform with Ansible: three dedicated controllers and three dedicated brokers. Set controller quorum, broker-only client access, SCRAM-SHA-512 users and scoped ACLs, disabled unwanted topic auto-creation, and configured the transaction topic with RF3/min-ISR2.</li>
+<li><strong>Failure testing.</strong> Validated authenticated brokers, controller quorum, ISR/replica health, producer-to-consumer flow, ACL behavior, idempotent Ansible reruns and controller/broker redundancy and recovery. Added exporters and monitoring for continued operations.</li>
+<li><strong>Redis operations.</strong> Operate hardened Redis with RDB/AOF persistence, metrics, dashboards and health checks; plan Sentinel/live-replication options for HA. Resolve application-to-Redis connectivity from Kubernetes nodes and pods, coordinate client firewall access, and inspect key-prefix counts when the application team needs to understand the stored data.</li>
+<li><strong>Earlier storage recovery.</strong> Reclaimed an abandoned 3 TB persistent volume on the DTE-hosted SRA enrollment platform. This earlier storage recovery was separate from the later six-node Kafka delivery.</li>
+</ul>
+</article>
+<article class="project" id="ai">
+<div class="project-head">
+<h4>AI platform architecture and self-hosted inference</h4>
+<span class="project-note">Working PoC foundation; application integrations planned</span>
+</div>
+<p class="context">Own the platform and solution-architecture foundation before the application team’s AI implementation. The agreed three-week PoC is phased around informational retrieval, voice services and later authorized actions.</p>
+<ul>
+<li><strong>Scope and service boundaries.</strong> Agreed the plan with the CEO and developers, separating inference and the developer gateway from persistent sessions, artifact storage, memory, embeddings/vector retrieval, RAG, guardrails and tool contracts. Developer API identity is separate from the future customer identity and business-resource authorization.</li>
+<li><strong>Developer access to inference.</strong> Implemented a self-hosted GPU/vLLM stack behind a PostgreSQL-backed LiteLLM gateway. Developers use an OpenAI-compatible API and stable model aliases with persistent user/team keys; backend model credentials and direct vLLM access remain private.</li>
+<li><strong>TLS and administration.</strong> Implemented Nginx TLS ingress, trusted public certificates, private backend/database bindings and named administrator access. Verified onboarding and restart persistence before disabling bootstrap login. Key administration supports listing, checking, blocking, unblocking and explicit rotation while retaining valid identities across reruns.</li>
+<li><strong>Gateway policy and operation.</strong> Made LiteLLM the mandatory path to inference, with caller authentication, restricted model access, input/output checks and request traceability. Disabled unsafe streaming paths in the PoC and added Supervisor process control, readiness checks and bounded operational logging that excludes credentials and payloads. Rate/concurrency policies and renewal acceptance remain part of ongoing PoC verification.</li>
+<li><strong>Orchestration and scoped tools.</strong> Built a Go/Google ADK root orchestrator with security and knowledge specialists. Verified live delegation and tool selection against a bounded telecom fixture, with allowlisted customer sections, package filtering and offers. Tested denied fields, invalid inputs, malformed fixtures, TLS/auth behavior, Go vet and Linux/Windows builds.</li>
+<li><strong>Memory and RAG direction.</strong> Planned distinct session, artifact and memory services, an internal embedding model and vector database, and bounded document retrieval behind the developer-facing gateway. These services and real business/MCP integrations are planned work; the working PoC already demonstrates inference, gateway access and agent/tool delegation.</li>
+<li><strong>Next integration phases.</strong> The new Spice chatbot workstream will use the platform foundation. STT/TTS, customer-scoped actions and AI routing into FusionPBX/IVR for a call centre belong to later phases; the standalone telephony PoC is documented separately below.</li>
+</ul>
+</article>
+<article class="project" id="famclub">
+<div class="project-head">
+<h4>FAM CLUB — Messaging and calling platform</h4>
+<span class="project-note">AWS/Oracle PoC and MVP; continued SBC/SIP support</span>
+</div>
+<p class="context">Delivered cloud, DevOps and SIP integration work for a family messaging/calling platform, then adapted the deployment to its current MVP budget and operating requirements.</p>
+<ul>
+<li><strong>Application and media architecture.</strong> Worked with developers and telco teams on Matrix/Synapse, MAS/OIDC, custom backends, LiveKit SFU/SIP, WebRTC, Redis, PostgreSQL/Aurora, Coturn and Sygnal push notifications across AWS and Oracle PCA. Mapped SBC, firewall, backend and media traffic paths into the design and evaluated messaging alternatives including MongooseIM.</li>
+<li><strong>AWS infrastructure.</strong> Provisioned the Terraform-based managed-service design with ECS/ECR, ALB/NLB, Aurora PostgreSQL, ElastiCache/Valkey, Route 53, ACM, S3, SES/SNS and CloudWatch. Included Client VPN, IAM, Secrets Manager, SSM and VPC endpoints for private access and service permissions.</li>
+<li><strong>ECS delivery.</strong> Implemented GitLab CI for image builds, database migrations, task-definition registration, ECS rollout and log verification.</li>
+<li><strong>Budget-led MVP adaptation.</strong> Moved the current direction to a smaller EC2 MVP, configuring PostgreSQL, Redis and MongooseIM/XMPP on the application host while retaining a separate media node. Worked on DNS/hosted-zone delegation and domain changes alongside the application deployment.</li>
+<li><strong>MongooseIM integration.</strong> Operate the pinned container with persistent configuration, data and logs, a runtime configuration renderer and systemd service management. Compiled and deployed the developer-supplied custom Erlang group-chat webhook module.</li>
+<li><strong>Current EC2 deployment work.</strong> Developing the protected-branch deployment path with a dedicated runner, hardened UBI-based containers, immutable local image deployment, preflight checks, migrations, health verification and rollback. The design uses a read-only root filesystem, dropped capabilities, no-new-privileges, bounded logs and a loopback Nginx proxy. Final backend deployment remains in progress.</li>
+<li><strong>IAM-based object access.</strong> Created the application S3 bucket and tested access through the EC2 IAM instance role. The intended application path uses the default credential chain; reconciling the backend’s existing static MinIO-credential assumptions is part of the deployment work.</li>
+<li><strong>Calling and continued support.</strong> Validated room-to-PSTN, PSTN-to-room and multi-party calls across local, cross-telco, international and landline scenarios. Continue troubleshooting SIP signaling, RTP/UDP media, E.164 number formatting, codecs, dispatch, firewall ACLs and public/private SDP. Work through shared-SBC environment routing so staging, production and MVP traffic reach the intended SIP service.</li>
+<li><strong>Capacity testing.</strong> Built a synthetic LiveKit harness and tested up to 300 one-way rooms and 600 participant processes/tracks. Recorded connection failures, CPU/network behavior and resource usage to distinguish load-generator limits from SFU capacity. Added persistent operational logging/rotation and tuned Linux socket/network limits for the test environment.</li>
+</ul>
+</article>
+<article class="project" id="cloudsuite">
+<div class="project-head">
+<h4>Ncell CloudSuite — Hosting, billing and integrations</h4>
+<span class="project-note">Platform delivery, development and ongoing administration</span>
+</div>
+<p class="context">Took the WiseCP/Plesk/CloudLinux hosting platform from architecture into implementation on Oracle PCA, with continued development and operating support across customer and enterprise workflows.</p>
+<ul>
+<li><strong>Delivery planning with the client.</strong> Translated Ncell scope into phased plans, sprint/day-wise tasks, ownership trackers, risks, dependencies and change notes. Completed Sprint 1 ahead of schedule. Coordinate infrastructure, application, billing, payment, SMS, bank/payment-partner and internal teams on access, public IP, cross-datacenter constraints, testing and delivery.</li>
+<li><strong>Hosting and customer flows.</strong> Implemented and tested service plans, Plesk/CloudLinux configuration, WiseCP frontend/theme changes, provisioning, KYC, checkout, billing, DNS/TLS, SMTP and WAF routing/integration points. Continue normal administration, upgrades and troubleshooting; completed a Plesk upgrade and checked the LSAPI custom-template/runtime path.</li>
+<li><strong>Payments and SMS.</strong> Developed and tested Fonepay dynamic QR and card-payment integrations, plus SMS modules. Coordinated partner testing and issue resolution so payment and notification behavior could be validated across the involved systems.</li>
+<li><strong>SAP/SFTP handoffs.</strong> Implemented controlled inbound/outbound file exchange with private runtime storage, retention and processing expectations, and separation from the public web layer. Created an OS-level tunnel where the topology required it and coordinated the routing/access dependencies.</li>
+<li><strong>New product development.</strong> Developed and QA-tested the package-enquiry/callback flow using native WiseCP CAPTCHA, contact and notification mechanisms. Deployed and verified the Namecheap WHOIS-contact validation hook, including code identity, syntax, permissions and SELinux checks.</li>
+<li><strong>Cumulative reporting.</strong> Developed and tested Gregorian/AD and Nepali/BS monthly SAP reporting with period-boundary handling, duplicate/rerun protection, persistent snapshots, partial-recipient retries and empty-month reports. Kept monthly output private, applied retention and scheduling rules, and preserved the existing financial calculations and daily/SFTP semantics. The candidate was validated with fixtures and spreadsheet-output simulation; final scheduler activation remains separate from that testing.</li>
+<li><strong>Release and support safety.</strong> Use package/hash checks and isolated verification to avoid applying a candidate against drifted live code. Review vendor patches, order/account issues and origin/WAF/DNS/email ownership with the relevant teams, and provide troubleshooting guidance and documentation to new hires.</li>
+<li><strong>Capacity and expansion.</strong> Reviewed existing resource usage through PromQL before recommending growth options. Compared scaling the current hosting node with adding another Plesk node and assigning plans across it, including the operational unknowns and client decisions each path requires.</li>
+<li><strong>Recovery responsibilities.</strong> Planned cold-standby recovery for Plesk, WiseCP and PostgreSQL using daily backups, restore validation and a proposed 24-hour RTO/RPO. Separated application/OS recovery from client-owned infrastructure, DNS/IP/routing/WAF cutover and fencing responsibilities.</li>
+</ul>
+</article>
+<article class="project" id="digipay">
+<div class="project-head">
+<h4>DigiPay — Wallet infrastructure and security</h4>
+<span class="project-note">Expanded architecture ownership and ongoing implementation/support</span>
+</div>
+<p class="context">The wallet infrastructure scope expanded beyond partner connectivity into environment, rack-level and hardware-firewall design. I work directly with the client, application vendor and partner teams on the architecture and deployment dependencies.</p>
+<ul>
+<li><strong>Architecture ownership.</strong> Reviewed and developed SIT/UAT, production and DR designs across rack layout, environment separation, sizing, DNS, VPN/VPC, public access, load balancing, databases and firewall paths. Explain the diagrams and design assumptions in client meetings, and resolve responsibilities and gaps with the teams that own each layer.</li>
+<li><strong>Partner connectivity.</strong> Implement and troubleshoot FortiGate/FortiWeb paths for partner banks, Ncell internal systems and payment providers. Work covers IPsec/IKE, traffic selectors, source/destination scoping, routing/NAT and service-specific policies, with connectivity validation across application, WAF, firewall and network layers.</li>
+<li><strong>Controlled egress.</strong> Added FQDN-based HTTPS access for payment providers and controlled Nginx/FortiGate access to object storage while preserving unrelated payment policies. Use packet/log evidence to diagnose remote-peer and IKE failures and validate both ends of the tunnel.</li>
+<li><strong>Database implementation.</strong> Configured PostgreSQL primary/standby physical asynchronous streaming replication on Oracle Linux. Work includes dedicated data storage, SCRAM authentication, checksums and required extensions, SELinux/custom-port handling, private credential generation, standby bootstrap and streaming/recovery checks.</li>
+<li><strong>Availability and migration decisions.</strong> Discuss failover/DR cases, application behavior and deployment gaps with the vendor and client. Current partner paths use the staging firewall; the move to the production firewall must account for banking/Ncell tunnels, existing rules and coordinated validation. Raised the risks of switching those dependencies during a holiday window. Automated database failover and final DR behavior remain under discussion.</li>
+</ul>
+</article>
+<a class="back-link" href="#work">Back to project index</a></section>
+<section class="project-group" id="architecture" aria-labelledby="architecture-heading"><h3 id="architecture-heading">Solution architecture and client decisions</h3>
+<article class="project" id="source2pay">
+<div class="project-head">
+<h4>Source2Pay — Procurement platform architecture</h4>
+<span class="project-note">Architecture finalized; preparing implementation</span>
+</div>
+<p class="context">A supplier/procurement platform with external supplier access, internal/admin workflows, Node.js services, document/PDF processing, SAP exchange and audit requirements. The design was refined with the client and application team before implementation.</p>
+<ul>
+<li><strong>Architecture alternatives.</strong> Compared extending the established RKE2 estate with a separate platform, and lean/non-HA, higher-availability, open-source and licensed variants. Explained the topology and quorum requirements behind availability claims, alongside reuse, isolation, failure domains, support ownership and cost.</li>
+<li><strong>Workload-based sizing.</strong> Sized compute, database, observability and storage around integration traffic, document processing, background work, queues/retries and operational requirements. Kept application-document storage and off-host backups separate from VM block storage, and revised compute/storage allocations after client budget discussions.</li>
+<li><strong>Platform scope.</strong> Mapped runtime/data, DMZ/frontend and delivery/tooling boundaries across production, staging and shared services. Evaluated dedicated PostgreSQL/Patroni, log observability, SFTP/SAP exchange, Kafka, Redis Sentinel/RabbitMQ needs, Vault HA, OpenTofu, Helm and Argo CD. Object/file-storage options included PCA-native storage and self-hosted S3 alternatives such as RustFS, SeaweedFS and Garage; the final design retains the components justified by the agreed workload.</li>
+<li><strong>Final client decisions.</strong> Finalized the architecture after explaining alternatives and diagrams. Retained HAProxy for the client’s security requirements following the F5/load-balancing discussion. Prepared the OLVM deployment in Pokhara, licensing/procurement inputs, network/TLS requirements, migration planning and the platform-node list with the application and client teams.</li>
+<li><strong>Recovery and expansion.</strong> Defined backup/recovery and expansion considerations separately from local HA. Backup location/strategy, frontend termination and migration dependencies must be agreed before go-live. The finalized architecture is now entering implementation.</li>
+</ul>
+</article>
+<article class="project" id="staas">
+<div class="project-head">
+<h4>STaaS — Ceph storage-as-a-service architecture</h4>
+<span class="project-note">Architecture, sizing and client presentation</span>
+</div>
+<p class="context">Designed the initial large-scale service and then reworked it to fit the client’s available budget while retaining clear protection, failure-domain and expansion decisions.</p>
+<ul>
+<li><strong>Initial service design.</strong> Proposed a 30 PB raw Ceph platform for S3, CephFS and NFS with enterprise SAS SSD/NVMe, EC 4+2 for the capacity tier, three-way replicated NVMe for metadata/index/log and small latency-sensitive data, and a 20% operating reserve.</li>
+<li><strong>Capacity and physical topology.</strong> Calculated replication and EC 4+2/8+4 overhead. After reserve, the initial 30 PB baseline yields about 8 PB sellable with three-way replication or 16 PB with EC 4+2. Compared roughly 82 nodes with 24×15.36 TB SAS SSD against 41 nodes with 24×30.72 TB NVMe, accounting for rack density, power/cooling, switch ports and CRUSH failure domains.</li>
+<li><strong>Role and access separation.</strong> Sized OSD/data, MON, MGR, MDS, RGW and NFS-Ganesha roles separately. Developed distinct public S3, VPN-only NFS, integration and administration paths, with HAProxy/ECMP/BGP-anycast concepts, a 100/200 GbE-class service fabric, isolated recovery/replication traffic and out-of-band administration.</li>
+<li><strong>Budget-led redesign.</strong> Reworked the same service for at least 300 TB sellable using 10 data nodes across three racks, rack-aware EC 4+2 and separate metadata/control/RGW roles. The 614.40 TB raw baseline becomes 409.60 TB after EC and about 327.68 TB sellable after reserve, with a disk-expansion path to roughly 409.60 TB sellable.</li>
+<li><strong>Client explanation.</strong> Produced detailed proposals and diagrams and explained every layer: service roles, protection arithmetic, metadata tiers, rack failure behavior, network fabrics, recovery and staged expansion. Kept local availability and site-level DR as distinct decisions in the discussion.</li>
+</ul>
+</article>
+<article class="project" id="wfms">
+<div class="project-head">
+<h4>Ncell WFMS — Workforce Management System</h4>
+<span class="project-note">GCP architecture proposed; awaiting client approval</span>
+</div>
+<p class="context">Developed a lean GCP architecture and cost model alongside the option to reuse existing private-cloud infrastructure.</p>
+<ul>
+<li><strong>Requirements and comparison.</strong> Mapped web/mobile access, availability, security, integrations and operating requirements into infrastructure and cloud-service choices. Compared reuse with a separate platform on isolation, operational maturity, failure domains and total operating cost.</li>
+<li><strong>Architecture and sizing.</strong> Worked through WAF/load balancing, frontend/DMZ paths, RKE2 and HAProxy/API-gateway reference architecture, PostgreSQL HA, delivery tooling, observability, secrets, Redis Sentinel/Kafka needs, storage and SMTP/SMS dependencies. Presented sizing, service costs and cloud-native simplification options. The GCP proposal awaits client approval.</li>
+</ul>
+</article>
+<article class="project" id="idp">
+<div class="project-head">
+<h4>Internal Developer Platform</h4>
+<span class="project-note">On-premises platform proposal</span>
+</div>
+<p class="context">Proposed a consistent delivery and operating model for 100+ services, with developer self-service and explicit platform-team ownership.</p>
+<ul>
+<li><strong>Service onboarding.</strong> Specified namespace provisioning, GitLab repository/scaffolding workflows, CI generation, Helm/manifest standards, Argo CD deployment, observability links and a central service catalog.</li>
+<li><strong>Governance and adoption.</strong> Defined RBAC, Vault-backed secrets, approvals and security boundaries. Planned staged adoption/migration through reusable templates and Argo CD ApplicationSets, keeping Kubernetes ownership and the support model explicit.</li>
+</ul>
+</article>
+<article class="project" id="dte">
+<div class="project-head">
+<h4>Ncell DTE replacement</h4>
+<span class="project-note">RFP assessment presented; client paused the initiative</span>
+</div>
+<p class="context">Assessed modernization of the legacy container platform against the client’s RFP, including the surrounding delivery and operating model.</p>
+<ul>
+<li><strong>Solution assessment.</strong> Evaluated Red Hat OpenShift, Rancher, Harness, KubeSphere, RKE2 and related CNCF options. Compared licensing, support, migration/coexistence, network/security constraints and long-term operating responsibility, then presented the alternatives to the client.</li>
+<li><strong>Complete platform scope.</strong> The proposal considered CI, secrets, security scanning, registries, GitOps, service networking and observability across GitLab, Vault, OWASP Dependency-Check, SonarQube, Trivy, Harbor/Nexus, Argo CD, Istio/Cilium, Prometheus/Grafana/Alertmanager and ELK/Loki with Logstash/Promtail. This was assessment/proposal work; the client paused implementation.</li>
+</ul>
+</article>
+<article class="project" id="corecollective">
+<div class="project-head">
+<h4>Core Collective — European gym SaaS</h4>
+<span class="project-note">AWS architecture and client consultation</span>
+</div>
+<p class="context">Contributed to a cost-conscious AWS design and explained the architecture in client meetings.</p>
+<ul>
+<li><strong>Service choices.</strong> Worked through CloudFront/S3/WAF, ALB, ECS autoscaling, PostgreSQL primary/replica, Redis, SNS/Firebase notification flow, ACM and VPC networking. Related CDN, database replication and caching choices to reliability, growth and delivery costs.</li>
+<li><strong>Operating model.</strong> Used architecture diagrams and AWS cost modeling to compare managed and dedicated components against the startup’s scale, budget, security and the team’s ability to operate them.</li>
+</ul>
+</article>
+<article class="project" id="cheers">
+<div class="project-head">
+<h4>Cheers — Azure platform assessment</h4>
+<span class="project-note">Migration options assessed; existing VM retained</span>
+</div>
+<p class="context">Assessed whether moving from a single VM to a container and CI/CD platform would justify its cost and operating overhead.</p>
+<ul>
+<li><strong>Client decision.</strong> Compared Azure container, Cosmos DB and Azure DevOps/CI/CD options, explained the service and cost trade-offs, and helped the client evaluate the migration. The client chose to retain the simpler VM architecture.</li>
+</ul>
+</article>
+<a class="back-link" href="#work">Back to project index</a></section>
+<section class="project-group" id="infrastructure" aria-labelledby="infrastructure-heading"><h3 id="infrastructure-heading">Internal infrastructure, labs and service research</h3>
+<article class="project" id="internal">
+<div class="project-head">
+<h4>Internal infrastructure and operational automation</h4>
+<span class="project-note">Ongoing administration, upgrades and recovery</span>
+</div>
+<p class="context">Maintain the company’s HPE/Proxmox and self-hosted service infrastructure alongside client delivery.</p>
+<ul>
+<li><strong>Infrastructure administration.</strong> Provision and troubleshoot HPE ProLiant/Proxmox hosts, expand storage, maintain backups and apply firmware/iLO upgrades. Operate GitLab, Nexus, HAProxy/Nginx proxies, jump-host access, WireGuard/IPsec VPNs and MikroTik routing/NAT.</li>
+<li><strong>GitLab upgrades and recovery.</strong> Completed multiple self-hosted upgrade steps, recovered a failed PostgreSQL migration involving an existing sequence/table object without rebuilding the instance, and verified service readiness and completed background migrations before continuing. Maintain trusted-proxy configuration and troubleshoot package/restart-related interruptions.</li>
+<li><strong>Small operational tools.</strong> Write Go utilities for HAProxy/platform tasks, Python VPN workflows and Bash/OCI CLI scripts for HAProxy failover, Patroni-leader VIP reassignment, DNS switching, health checks and administration. Automate Nginx routing where required by internal services.</li>
+<li><strong>Carrier connectivity.</strong> Configured Linux IPsec and scoped NAT for telco connectivity, working through overlapping-address constraints and packet-path validation. This work is separate from the DigiPay FortiGate deployment.</li>
+<li><strong>Team handover.</strong> Provide new hires and developers with access, documentation, operating context and troubleshooting guidance so existing platforms remain supportable.</li>
+</ul>
+</article>
+<article class="project" id="rbm">
+<div class="project-head">
+<h4>Reserve Bank of Malawi — Client systems support</h4>
+<span class="project-note">Infrastructure implementation and support</span>
+</div>
+<p class="context">Supported banking/internal-system infrastructure and its delivery tools.</p>
+<ul>
+<li><strong>Implementation and recovery.</strong> Deployed Nexus, implemented replication and Apache failover/DR and DNS-switching scripts, and applied CIS hardening. Supported Docker, Nginx/Apache HTTPD, SonarQube and Apache Superset components.</li>
+</ul>
+</article>
+<article class="project" id="pms">
+<div class="project-head">
+<h4>PMS — Performance-management workload</h4>
+<span class="project-note">Short infrastructure assignment</span>
+</div>
+<p class="context">Set up PostgreSQL primary/replica, applied CIS hardening and configured Docker-based components for the performance-management workload.</p>
+</article>
+<article class="project" id="fusionpbx">
+<div class="project-head">
+<h4>FusionPBX / FreeSWITCH telephony</h4>
+<span class="project-note">Working standalone PoC</span>
+</div>
+<p class="context">Built and validated the telephony foundation that can support the later AI call-centre work.</p>
+<ul>
+<li><strong>Functional coverage.</strong> Verified SIP registration, two-way calling, IVR/DTMF, voicemail, recording and call-detail records. Troubleshot call and control paths, including related FreeSWITCH event-socket behavior.</li>
+<li><strong>Integration boundary.</strong> The standalone telephony PoC works; connecting it to the AI gateway, retrieval and agent routing is a later workstream.</li>
+</ul>
+</article>
+<article class="project" id="openstack">
+<div class="project-head">
+<h4>GCP / OpenStack all-in-one lab</h4>
+<span class="project-note">GCP foundation validated; Kolla setup in progress</span>
+</div>
+<p class="context">Provisioned the cloud lab and verified the host prerequisites before starting the OpenStack/Kolla all-in-one configuration.</p>
+<ul>
+<li><strong>Cloud preparation.</strong> Configured project/billing/API access and IAM context, a custom VPC, distinct management/provider subnets, dual NICs, static addresses and a tag-scoped SSH firewall rule.</li>
+<li><strong>Compute and cost trade-off.</strong> Tested machine families and zones after capacity shortages, then selected a replacement retaining the required 8 vCPU, 16 GB RAM, nested virtualization and cost target. Configured IP forwarding and persistent disk storage.</li>
+<li><strong>Readiness validation.</strong> Verified guest VT-x, KVM modules and /dev/kvm, management/provider routing, root-filesystem expansion and available compute/storage. Stopped the lab when idle to avoid unnecessary compute charges, then began Kolla all-in-one setup. Full OpenStack acceptance remains in progress.</li>
+</ul>
+</article>
+<article class="project" id="openbao">
+<div class="project-head">
+<h4>OpenBao secrets-management lab</h4>
+<span class="project-note">Lab implemented and access controls tested</span>
+</div>
+<p class="context">Established a self-hosted secrets lab to test persistent storage, administration and team isolation.</p>
+<ul>
+<li><strong>Controls and validation.</strong> Configured TLS, integrated Raft storage, Shamir unsealing, audit logging and team-scoped secret policies. Verified access isolation and administrator access, then revoked the bootstrap root token.</li>
+</ul>
+</article>
+<article class="project" id="service-research">
+<div class="project-head">
+<h4>GPUaaS and firewall/NGFW-as-a-service</h4>
+<span class="project-note">Feasibility research and solution assessment</span>
+</div>
+<p class="context">Researched how GPU and network-security services could be offered with suitable isolation, licensing and operating responsibilities.</p>
+<ul>
+<li><strong>GPU service trade-offs.</strong> Assessed NVIDIA MIG/vGPU, AI Enterprise licensing, H100/A100 options, workload isolation and inference/MLOps requirements. Distinguished hardware partitioning, virtualization, licensing and workload needs when comparing service models.</li>
+<li><strong>Firewall service design.</strong> Evaluated OPNsense/Zenarmor, firewall/NGFW service concepts, HA, tenant boundaries and cloud deployment trade-offs. Also explored Vault/External Secrets Operator, Envoy Gateway API, VictoriaMetrics/VictoriaLogs and LGTM-style observability as platform options. These are research and evaluation activities.</li>
+</ul>
+</article>
+<a class="back-link" href="#work">Back to project index</a></section>
 </article>
 <article class="role">
-<div class="role-head">
-<div>
-<h3>F1Soft International Pvt. Ltd.</h3>
-<div class="title">DevOps Intern</div>
-</div>
-<div class="role-meta">Lalitpur, Nepal<br/>May 2024 — August 2024</div>
-</div>
-<ul>
-<li>Gained hands-on production exposure to Kubernetes, Argo CD, Helm, HAProxy/Nginx, ELK/Loki, CIS hardening, HashiCorp Vault, Linux administration, and deployment troubleshooting.</li>
-<li>Built the practical foundation later applied in client-facing production platform engineering, HA/recovery, architecture, and automation work.</li>
-</ul>
+<div class="role-head"><div><h3>F1Soft International Pvt. Ltd.</h3><div class="title">DevOps Intern</div></div>
+<div class="role-meta">May 2024 – August 2024</div></div>
+<p class="role-summary">Gained hands-on experience through lab work and production-support exposure in Kubernetes/Argo CD/Helm deployments, HAProxy/Nginx, ELK/Loki, Linux administration, CIS hardening, Vault and deployment troubleshooting.</p>
 </article>
 </section>
-<section>
-<h2>Skills</h2>
+<section id="skills" aria-labelledby="skills-heading"><h2 id="skills-heading">Technical skills</h2>
 <div class="skills">
-<div class="skill">
-<strong>Cloud Native &amp; Platform</strong>
-<p>Kubernetes, RKE2, K3s, Docker, Podman, Helm, Argo CD, Rancher, Gateway API, Envoy Gateway, GitOps.</p>
-</div>
-<div class="skill">
-<strong>Cloud &amp; Hybrid</strong>
-<p>Oracle PCA X10, AWS ECS/ECR/Aurora/ElastiCache/ALB/NLB/Route 53/CloudFront/S3/WAF/ACM/CloudWatch/SES/SNS/Client VPN, GCP architecture/cost modeling, Azure platform assessment, Proxmox VE.</p>
-</div>
-<div class="skill">
-<strong>CI/CD, IaC &amp; Automation</strong>
-<p>GitLab CI, Jenkins, Terraform, Ansible, SonarQube, Trivy, Nexus Repository, Harbor evaluation, OWASP Dependency-Check, Bash, Python, Go, OCI CLI.</p>
-</div>
-<div class="skill">
-<strong>Data, Messaging &amp; HA</strong>
-<p>PostgreSQL, Patroni, etcd, HAProxy/Keepalived, Kafka/KRaft, Redis, Redis Sentinel, Valkey, RabbitMQ architecture, MySQL/MariaDB, MongoDB, backup/restore, failover/failback.</p>
-</div>
-<div class="skill">
-<strong>Observability &amp; Reliability</strong>
-<p>Prometheus, Grafana, Alertmanager, Elasticsearch, Kibana, Fleet Server, ELK/Loki, Tempo, VictoriaMetrics/VictoriaLogs evaluation, CloudWatch, PromQL, SNMP traps, OID/MIB mapping, FMS/SOC alerting, metrics/log alerting, exporters, RCA, redundancy testing, tcpdump, Wireshark.</p>
-</div>
-<div class="skill">
-<strong>Networking &amp; Security</strong>
-<p>HAProxy, Nginx, Apache, DNS, TLS/mTLS, OpenSSL, WireGuard, IPsec, MikroTik, firewall/NAT, FortiWeb/WAF, appliance and OS-level tunnels, Vault, CIS hardening, network segmentation, ISO 27001-aligned environments.</p>
-</div>
-<div class="skill">
-<strong>Storage &amp; DR</strong>
-<p>Ceph, RGW/S3, CephFS, NFS-Ganesha, erasure coding, replication, rack/failure-domain design, storage/client/recovery fabrics, warm/cold standby, RTO/RPO, fencing/STONITH, DR runbooks.</p>
-</div>
-<div class="skill">
-<strong>Real-time, Hosting &amp; Integrations</strong>
-<p>Matrix/Synapse, MAS, Sygnal, MongooseIM, ejabberd, XMPP, WebRTC, SIP trunks, LiveKit SFU/SIP, Coturn, WiseCP, Plesk, CloudLinux, WHMCS, SMTP relay, DNS glue records, billing workflows, payment gateways, payment testing/validation, SMS modules, SAP/SFTP file exchange.</p>
-</div>
-<div class="skill">
-<strong>Architecture &amp; Client Delivery</strong>
-<p>Infrastructure architecture, capacity/sizing, cloud cost modeling, security review, HLD/LLD, MOPs, RCAs, DR proposals, audit evidence, sprint/project planning, risk/dependency management, RACI, Gantt timelines, communication matrices, client presentations, stakeholder communication, vendor/bank coordination, infrastructure/security advisory.</p>
-</div>
-
-</div>
+<div class="skill"><strong>Platforms and cloud</strong><p>Kubernetes/RKE2/K3s, Docker/Podman, Helm, Argo CD/GitOps, Oracle PCA X10, AWS ECS/ECR, ALB/NLB, Aurora, ElastiCache/Valkey, Route 53, CloudFront, S3, WAF, ACM, CloudWatch, SES/SNS, Client VPN, Proxmox/HPE; GCP architecture/labs, OpenStack/Kolla lab work and Azure platform assessment.</p></div>
+<div class="skill"><strong>Delivery and automation</strong><p>GitLab CI/admin, Jenkins, Terraform, Ansible, SonarQube, Trivy, Nexus, Go, Python, Bash and OCI CLI; Harbor/OWASP Dependency-Check and broader platform-toolchain assessment.</p></div>
+<div class="skill"><strong>Data, messaging and availability</strong><p>PostgreSQL/Patroni, etcd, HAProxy/Keepalived, Kafka/KRaft, SCRAM/ACLs, Redis/Sentinel, Valkey, MySQL/MariaDB, MongoDB; RabbitMQ architecture and backup/restore/failover planning.</p></div>
+<div class="skill"><strong>Observability and recovery</strong><p>Prometheus, Grafana, Alertmanager, Elasticsearch/Kibana/Fleet, ELK/Loki, CloudWatch, PromQL, SNMP OID/MIB mapping, FMS/SOC integration, exporters, RCA, redundancy tests, tcpdump and Wireshark; Tempo/LGTM and VictoriaMetrics/VictoriaLogs evaluation.</p></div>
+<div class="skill"><strong>Networking and security</strong><p>HAProxy, Nginx, Apache, DNS, TLS/mTLS, OpenSSL, WireGuard, IPsec, MikroTik, FortiGate/FortiWeb, firewall/NAT, network segmentation, scoped egress, CIS hardening and Vault; OpenBao lab work, Gateway API/Envoy and secrets-management assessment.</p></div>
+<div class="skill"><strong>Storage and disaster recovery</strong><p>Ceph S3/RGW, CephFS, NFS-Ganesha, block/object/file storage, erasure coding, replication, metadata tiers, rack/failure domains, service/recovery fabrics, warm/cold standby, RTO/RPO, fencing and DR runbooks.</p></div>
+<div class="skill"><strong>AI platform engineering</strong><p>GPU inference, vLLM, LiteLLM, PostgreSQL-backed gateway identity, OpenAI-compatible APIs, trusted TLS, user/team keys, Go/Google ADK and scoped function tools; service architecture for sessions, artifacts, memory, embeddings/RAG and guardrails.</p></div>
+<div class="skill"><strong>Communications</strong><p>LiveKit SFU/SIP, SBC integration, SIP trunks, RTP, WebRTC, Matrix/Synapse, MAS/OIDC, Coturn, Sygnal, MongooseIM/XMPP and custom Erlang integration; FusionPBX/FreeSWITCH PoC, IVR/DTMF and CDRs. Messaging alternatives include ejabberd evaluation.</p></div>
+<div class="skill"><strong>Hosting and integrations</strong><p>WiseCP, Plesk, CloudLinux, Nginx, SMTP, DNS/glue records, WAF paths, service plans, customer/billing workflows, Fonepay/card-payment testing, SMS, SAP/SFTP, PHP reporting and Gregorian/Nepali calendar handling; WHMCS familiarity.</p></div>
+<div class="skill"><strong>Architecture and client delivery</strong><p>HLD/LLD, solution sizing, cost models, RFP assessment, migration/recovery planning, MOPs, RCAs, audit evidence, sprint/day-wise planning, risks/dependencies, RACI, Gantt timelines, communication matrices, client presentations, vendor/partner coordination and handover.</p></div>
+</div></section>
+<section id="education" aria-labelledby="education-heading"><h2 id="education-heading">Education</h2>
+<h3>Bachelor of Engineering, Computer Engineering</h3>
+<p class="role-summary">Tribhuvan University, Institute of Engineering | Graduated April 2024</p>
 </section>
-<section>
-<h2>Education</h2>
-<p><strong>Bachelor of Engineering, Computer Engineering</strong></p>
-<p>Tribhuvan University, Institute of Engineering | Graduated April 2024</p>
-</section>
-<a class="linkedin-button" href="https://www.linkedin.com/in/abhinashshrestha/" rel="noopener" target="_blank">Message me on LinkedIn →</a>
+<a class="linkedin-button" href="https://www.linkedin.com/in/abhinashshrestha/">Message me on LinkedIn</a>
+<footer><p>Updated October 2026</p><a href="#top">Back to top</a></footer>
 </main>
 </body>
 </html>
